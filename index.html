@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMC PVT LTD | Recruitment & Staffing Solutions</title>
+    <meta
+      name="description"
+      content="Sourcingia Management Consulting Pvt. Ltd. provides recruitment and staffing services with 12+ years of experience across IT and non-IT sectors."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brandSky: "#7c3aed",
+              brandLight: "#f3e8ff",
+              brandCta: "#6d28d9",
+              brandDark: "#2e1065"
+            },
+            fontFamily: {
+              heading: ["Poppins", "sans-serif"],
+              body: ["Open Sans", "sans-serif"]
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      .hero-bg {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .fab-stack {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        z-index: 60;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+      }
+      .fab-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        transition: opacity 0.22s ease, transform 0.22s ease;
+      }
+      .fab-stack.is-scrolling .fab-actions {
+        opacity: 0;
+        transform: translateY(8px) scale(0.96);
+        pointer-events: none;
+      }
+      .fab-action-btn {
+        width: 52px;
+        height: 52px;
+        border-radius: 9999px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.3);
+      }
+      .fab-action-btn svg {
+        width: 22px;
+        height: 22px;
+      }
+      .fab-main-btn {
+        width: 52px;
+        height: 52px;
+        border: 0;
+        border-radius: 9999px;
+        background: #312e81;
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.35);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        cursor: pointer;
+      }
+      .fab-main-btn span {
+        width: 4px;
+        height: 4px;
+        border-radius: 9999px;
+        background: #fff;
+      }
+      @media (max-width: 640px) {
+        .hero-bg {
+          min-height: 78vh;
+          background-position: center top;
+          background-size: contain;
+          background-color: #0b1120;
+        }
+      }
+      @media (max-width: 1023px) {
+        #menuToggle {
+          display: inline-flex !important;
+          z-index: 60;
+        }
+        #menu {
+          display: none !important;
+        }
+        .fab-stack {
+          right: 10px !important;
+          bottom: 8px !important;
+        }
+        .fab-action-btn {
+          width: 52px;
+          height: 52px;
+        }
+      }
+      @media (max-width: 420px) {
+        #menuToggle {
+          padding: 0.45rem !important;
+        }
+        .fab-action-btn {
+          width: 48px;
+          height: 48px;
+        }
+        .fab-action-btn svg {
+          width: 20px;
+          height: 20px;
+        }
+        .fab-main-btn {
+          width: 48px;
+          height: 48px;
+        }
+      }
+      @media (min-width: 1024px) {
+        #menuToggle,
+        #mobileMenu {
+          display: none !important;
+        }
+        #menu {
+          display: flex !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="overflow-x-hidden bg-white font-body text-slate-700 selection:bg-sky-200">
+    <header id="navbar" class="fixed inset-x-0 top-0 z-50 bg-gradient-to-r from-purple-700 via-violet-700 to-fuchsia-700 transition-all duration-300">
+      <nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <a href="index.html" class="font-heading text-base font-bold text-white sm:text-lg">SMC PVT LTD</a>
+        <button id="menuToggle" class="ml-auto inline-flex shrink-0 rounded-md border border-sky-100 p-2 text-white" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+        <ul id="menu" class="hidden gap-8 text-sm font-semibold text-white">
+          <li><a class="hover:text-purple-100" href="index.html">Home</a></li>
+          <li><a class="hover:text-purple-100" href="about.html">About</a></li>
+          <li><a class="hover:text-purple-100" href="services.html">Services</a></li>
+          <li><a class="hover:text-purple-100" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div id="mobileMenu" class="mx-4 hidden rounded-xl bg-white p-4 shadow-lg">
+        <a class="block py-2 font-semibold text-brandDark" href="index.html">Home</a>
+        <a class="block py-2 font-semibold text-brandDark" href="about.html">About</a>
+        <a class="block py-2 font-semibold text-brandDark" href="services.html">Services</a>
+        <a class="block py-2 font-semibold text-brandDark" href="contact.html">Contact</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-bg relative flex min-h-[78vh] items-center overflow-hidden bg-slate-900 pt-24 sm:min-h-screen sm:pt-28" style="background-image: linear-gradient(rgba(2, 6, 23, 0.72), rgba(2, 6, 23, 0.72)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80');">
+        <div class="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <div class="max-w-3xl">
+            <p class="mb-4 inline-flex rounded-full border border-purple-300/30 bg-purple-300/20 px-4 py-1 text-sm text-purple-100" data-typewriter="Recruitment & Staffing Excellence">Recruitment & Staffing Excellence</p>
+            <h1 class="font-heading text-3xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">Building Strong Teams. Powering Business Growth.</h1>
+            <p class="mt-6 max-w-2xl text-base text-slate-200 sm:text-lg">Sourcingia Management Consulting Pvt. Ltd. delivers expert recruitment and staffing solutions backed by 12+ years of industry experience across IT and non-IT sectors.</p>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="contact.html" class="rounded-lg bg-brandCta px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-sky-500">Contact Us</a>
+              <a href="services.html" class="rounded-lg border border-sky-200 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-brandDark">Get Hiring Solutions</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section data-aos="fade-up" class="bg-white py-16 sm:py-20">
+        <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <div>
+            <h2 class="font-heading text-3xl font-bold text-brandDark">Built on Experience. Focused on Results.</h2>
+            <p class="mt-5 leading-relaxed text-slate-600">Sourcingia Management Consulting Pvt. Ltd. is a newly established recruitment and staffing firm built on over 12 years of proven experience. We have successfully delivered hiring solutions across industries in India and global markets, and now aim to strengthen core industry staffing with a client-focused approach.</p>
+          </div>
+          <div class="rounded-2xl bg-brandLight p-8">
+            <p class="text-sm font-semibold uppercase tracking-wide text-brandCta" data-typewriter="Trusted by hiring teams">Trusted by hiring teams</p>
+            <div class="mt-5 grid grid-cols-2 gap-3 text-center sm:gap-4">
+              <div class="rounded-lg bg-white p-3 shadow-sm sm:p-4"><p class="font-heading text-lg font-bold leading-tight text-brandDark sm:text-2xl"><span class="counter" data-target="12" data-suffix="+">0</span></p><p class="text-sm">Years Experience</p></div>
+              <div class="rounded-lg bg-white p-3 shadow-sm sm:p-4"><p class="font-heading text-lg font-bold leading-tight text-brandDark sm:text-2xl"><span class="counter" data-target="5">0</span></p><p class="text-sm">Core Sectors</p></div>
+              <div class="rounded-lg bg-white p-3 shadow-sm sm:p-4"><p class="font-heading text-lg font-bold leading-tight text-brandDark sm:text-2xl">India + Global</p><p class="text-sm">Market Reach</p></div>
+              <div class="rounded-lg bg-white p-3 shadow-sm sm:p-4"><p class="font-heading text-lg font-bold leading-tight text-brandDark sm:text-2xl">Fast</p><p class="text-sm">Turnaround Hiring</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section data-aos="fade-up" class="bg-slate-50 py-16 sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 class="font-heading text-3xl font-bold text-brandDark">Our Services Overview</h2>
+          <p class="mt-3 max-w-2xl text-slate-600">Specialized recruitment expertise across high-impact business verticals.</p>
+          <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <article class="rounded-2xl border border-sky-100 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md"><h3 class="font-heading text-xl font-semibold text-brandDark">Real Estate & Construction</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">Providing skilled workforce for infrastructure and real estate development.</p></article>
+            <article class="rounded-2xl border border-sky-100 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md"><h3 class="font-heading text-xl font-semibold text-brandDark">Manufacturing</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">End-to-end staffing solutions for production and operations.</p></article>
+            <article class="rounded-2xl border border-sky-100 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md"><h3 class="font-heading text-xl font-semibold text-brandDark">Research & Development</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">Hiring specialized talent for innovation and technical research.</p></article>
+            <article class="rounded-2xl border border-sky-100 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md"><h3 class="font-heading text-xl font-semibold text-brandDark">IT Industry</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">Connecting businesses with top tech professionals.</p></article>
+            <article class="rounded-2xl border border-sky-100 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md sm:col-span-2 lg:col-span-1"><h3 class="font-heading text-xl font-semibold text-brandDark">Retail Industry</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">Staffing solutions for retail operations and management.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section data-aos="fade-up" class="bg-white py-16 sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <h2 class="font-heading text-3xl font-bold text-brandDark">Why Choose Us</h2>
+          <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            <div class="rounded-xl bg-brandLight p-5 text-center text-sm font-semibold text-brandDark">12+ years experience</div>
+            <div class="rounded-xl bg-brandLight p-5 text-center text-sm font-semibold text-brandDark">Industry expertise</div>
+            <div class="rounded-xl bg-brandLight p-5 text-center text-sm font-semibold text-brandDark">Fast and reliable hiring</div>
+            <div class="rounded-xl bg-brandLight p-5 text-center text-sm font-semibold text-brandDark">Global and domestic reach</div>
+            <div class="rounded-xl bg-brandLight p-5 text-center text-sm font-semibold text-brandDark">Client-focused approach</div>
+          </div>
+        </div>
+      </section>
+
+      <section data-aos="fade-up" class="bg-slate-50 py-16 sm:py-20">
+        <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 class="font-heading text-3xl font-bold text-brandDark">What Clients Say</h2>
+          <div class="relative mt-10 overflow-hidden rounded-2xl bg-white p-8 shadow-sm">
+            <div id="testimonialSlider" class="transition-all duration-500">
+              <blockquote class="testimonial-item"><p class="text-lg leading-relaxed text-slate-700">"SMC PVT LTD helped us close critical positions quickly with high-quality profiles."</p><footer class="mt-4 text-sm font-semibold text-brandCta">HR Lead, TechNova Solutions</footer></blockquote>
+              <blockquote class="testimonial-item hidden"><p class="text-lg leading-relaxed text-slate-700">"Their understanding of manufacturing talent needs is precise and reliable."</p><footer class="mt-4 text-sm font-semibold text-brandCta">Operations Head, PrimeFab Industries</footer></blockquote>
+              <blockquote class="testimonial-item hidden"><p class="text-lg leading-relaxed text-slate-700">"Responsive, professional, and genuinely focused on our hiring outcomes."</p><footer class="mt-4 text-sm font-semibold text-brandCta">Director, UrbanSpace Realty</footer></blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section data-aos="fade-up" class="bg-brandDark py-16">
+        <div class="mx-auto flex max-w-5xl flex-col items-center justify-between gap-6 px-4 text-center sm:px-6 lg:flex-row lg:px-8 lg:text-left">
+          <h2 class="font-heading text-3xl font-bold text-white">Looking to hire the right talent?</h2>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="tel:7996200355" class="rounded-lg bg-brandCta px-6 py-3 text-sm font-semibold text-white hover:bg-sky-500">Call Now</a>
+            <a href="https://wa.me/917996200355" target="_blank" rel="noopener noreferrer" class="rounded-lg border border-sky-200 px-6 py-3 text-sm font-semibold text-white hover:bg-white hover:text-brandDark">WhatsApp Us</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gradient-to-r from-purple-900 via-violet-800 to-fuchsia-800 py-14 text-purple-100">
+      <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+        <div><h3 class="font-heading text-2xl font-bold text-white">SMC PVT LTD</h3><p class="mt-4 text-sm leading-relaxed">Sourcingia Management Consulting Pvt. Ltd. is your trusted recruitment partner for IT and non-IT talent solutions.</p><a href="#" class="mt-6 inline-block rounded-full border border-purple-100 px-3 py-1 text-xs hover:bg-white hover:text-brandCta">Instagram</a></div>
+        <div><h4 class="font-semibold text-white">Quick Links</h4><ul class="mt-4 space-y-3 text-sm"><li><a class="hover:text-white" href="index.html">Home</a></li><li><a class="hover:text-white" href="about.html">About Us</a></li><li><a class="hover:text-white" href="services.html">Our Services</a></li><li><a class="hover:text-white" href="contact.html">Contact Us</a></li></ul></div>
+        <div><h4 class="font-semibold text-white">Services</h4><ul class="mt-4 space-y-3 text-sm"><li>Real Estate & Construction</li><li>Manufacturing</li><li>Research & Development</li><li>IT Industry</li><li>Retail Industry</li></ul></div>
+        <div><h4 class="font-semibold text-white">Contact Us</h4><ul class="mt-4 space-y-3 text-sm"><li><a class="hover:text-white" href="tel:7996200355">+91 7996200355</a></li><li><a class="hover:text-white break-all" href="mailto:Sourcingiamanagementconsulting@gmail.com">Sourcingiamanagementconsulting@gmail.com</a></li><li><a class="font-semibold text-white hover:text-purple-100" href="https://wa.me/917996200355" target="_blank" rel="noopener noreferrer">Chat with us</a></li></ul></div>
+      </div>
+      <div class="mx-auto mt-10 max-w-7xl border-t border-purple-300/40 px-4 pt-6 sm:px-6 lg:px-8"><div class="flex flex-col items-start justify-between gap-3 text-xs sm:flex-row sm:items-center"><p>© <span id="year"></span> Sourcingia Management Consulting Pvt. Ltd. All rights reserved.</p><div class="flex gap-5"><a class="hover:text-white" href="#">Terms & Conditions</a><a class="hover:text-white" href="#">Privacy Policy</a><a class="hover:text-white" href="#">Refund Policy</a></div></div></div>
+    </footer>
+
+    <div id="floatingFab" class="fab-stack">
+      <div class="fab-actions">
+        <a
+          href="https://wa.me/917996200355"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="fab-action-btn bg-emerald-500"
+          aria-label="WhatsApp"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path
+              fill="currentColor"
+              d="M20.5 3.5A10.1 10.1 0 0 0 3.5 17.2L2 22l4.9-1.5A10.1 10.1 0 1 0 20.5 3.5Zm-9.4 18.4h-.1a8.4 8.4 0 0 1-4.3-1.2l-.3-.2-2.5.8.8-2.4-.2-.3a8.4 8.4 0 1 1 6.6 3.3Zm4.8-6.5c-.3-.1-1.6-.8-1.8-.9-.3-.1-.5-.1-.7.3-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.4-2.3-1.3c-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6l.5-.6c.1-.1.2-.3.3-.4s0-.3-.1-.4l-.8-1.9c-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.1 3c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.5.6.1 1.2.1 1.6.1.5 0 1.6-.6 1.8-1.2s.2-1.1.2-1.2-.2-.2-.5-.3Z"
+            />
+          </svg>
+        </a>
+        <a href="tel:7996200355" class="fab-action-btn bg-brandCta" aria-label="Call now">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none">
+            <path
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.1.4 2.3.6 3.6.6.7 0 1.2.6 1.2 1.2V20c0 .7-.6 1.2-1.2 1.2C9.9 21.2 2.8 14.1 2.8 5.2 2.8 4.5 3.3 4 4 4h2.5c.7 0 1.2.6 1.2 1.2 0 1.2.2 2.5.6 3.6.1.4 0 .9-.2 1.2l-2.2 2.2Z"
+            />
+          </svg>
+        </a>
+      </div>
+      <button type="button" class="fab-main-btn" aria-label="Quick contact actions">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 700, easing: "ease-out-cubic", once: true, offset: 70 });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>

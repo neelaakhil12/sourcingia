@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services | SMC PVT LTD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { theme: { extend: { colors: { brandSky: "#7c3aed", brandLight: "#f3e8ff", brandCta: "#6d28d9", brandDark: "#2e1065" }, fontFamily: { heading: ["Poppins", "sans-serif"], body: ["Open Sans", "sans-serif"] } } } };
+    </script>
+    <style>
+      .fab-stack {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        z-index: 60;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+      }
+      .fab-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        transition: opacity 0.22s ease, transform 0.22s ease;
+      }
+      .fab-stack.is-scrolling .fab-actions {
+        opacity: 0;
+        transform: translateY(8px) scale(0.96);
+        pointer-events: none;
+      }
+      .fab-action-btn {
+        width: 52px;
+        height: 52px;
+        border-radius: 9999px;
+        padding: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.3);
+      }
+      .fab-action-btn svg {
+        width: 22px;
+        height: 22px;
+      }
+      .fab-main-btn {
+        width: 52px;
+        height: 52px;
+        border: 0;
+        border-radius: 9999px;
+        background: #312e81;
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.35);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        cursor: pointer;
+      }
+      .fab-main-btn span {
+        width: 4px;
+        height: 4px;
+        border-radius: 9999px;
+        background: #fff;
+      }
+      @media (max-width: 1023px) {
+        #menuToggle {
+          display: inline-flex !important;
+          z-index: 60;
+        }
+        #menu {
+          display: none !important;
+        }
+        .fab-stack {
+          right: 10px !important;
+          bottom: 8px !important;
+        }
+        .fab-action-btn {
+          width: 52px;
+          height: 52px;
+        }
+      }
+      @media (max-width: 420px) {
+        #menuToggle {
+          padding: 0.45rem !important;
+        }
+        .fab-action-btn {
+          width: 48px;
+          height: 48px;
+        }
+        .fab-action-btn svg {
+          width: 20px;
+          height: 20px;
+        }
+        .fab-main-btn {
+          width: 48px;
+          height: 48px;
+        }
+      }
+      @media (min-width: 1024px) {
+        #menuToggle,
+        #mobileMenu {
+          display: none !important;
+        }
+        #menu {
+          display: flex !important;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-white font-body text-slate-700">
+    <header id="navbar" class="fixed inset-x-0 top-0 z-50 bg-gradient-to-r from-purple-700 via-violet-700 to-fuchsia-700 transition-all duration-300">
+      <nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <a href="index.html" class="font-heading text-base font-bold text-white sm:text-lg">SMC PVT LTD</a>
+        <button id="menuToggle" class="ml-auto inline-flex shrink-0 rounded-md border border-sky-100 p-2 text-white" aria-label="Open menu"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg></button>
+        <ul id="menu" class="hidden gap-8 text-sm font-semibold text-white">
+          <li><a class="hover:text-purple-100" href="index.html">Home</a></li>
+          <li><a class="hover:text-purple-100" href="about.html">About</a></li>
+          <li><a class="text-purple-100" href="services.html">Services</a></li>
+          <li><a class="hover:text-purple-100" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div id="mobileMenu" class="mx-4 hidden rounded-xl bg-white p-4 shadow-lg"><a class="block py-2 font-semibold text-brandDark" href="index.html">Home</a><a class="block py-2 font-semibold text-brandDark" href="about.html">About</a><a class="block py-2 font-semibold text-brandDark" href="services.html">Services</a><a class="block py-2 font-semibold text-brandDark" href="contact.html">Contact</a></div>
+    </header>
+    <main class="pt-28">
+      <section data-aos="fade-up" class="bg-brandLight py-16"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><h1 class="font-heading text-4xl font-bold text-brandDark">Industry-Focused Recruitment Services</h1><p class="mt-4 max-w-3xl text-slate-600">We provide reliable hiring pipelines tailored to operational and strategic workforce requirements.</p></div></section>
+      <section data-aos="fade-up" class="py-16">
+        <div class="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
+          <article class="rounded-2xl border border-purple-200 bg-purple-50 p-8"><h2 class="font-heading text-2xl font-bold text-purple-900">Real Estate & Construction</h2><p class="mt-3 text-slate-600">Providing skilled professionals for project execution, site operations, and engineering support.</p><p class="mt-2 text-sm"><span class="font-semibold text-purple-900">Hiring capabilities:</span> Site engineers, supervisors, project managers, procurement teams.</p><p class="mt-2 text-sm"><span class="font-semibold text-purple-900">Industries served:</span> Residential, commercial, infrastructure projects.</p><div class="mt-5 flex gap-3"><a href="contact.html" class="rounded-lg bg-brandCta px-5 py-2 text-sm font-semibold text-white">Enquire Now</a><a href="https://wa.me/917996200355" target="_blank" rel="noopener noreferrer" class="rounded-lg border border-sky-200 px-5 py-2 text-sm font-semibold text-brandDark">WhatsApp</a></div></article>
+          <article class="rounded-2xl border border-violet-200 bg-violet-50 p-8"><h2 class="font-heading text-2xl font-bold text-violet-900">Manufacturing</h2><p class="mt-3 text-slate-600">End-to-end staffing for production, quality, logistics, and operations functions.</p><p class="mt-2 text-sm"><span class="font-semibold text-violet-900">Hiring capabilities:</span> Plant operators, line managers, QA specialists, maintenance staff.</p><p class="mt-2 text-sm"><span class="font-semibold text-violet-900">Industries served:</span> Industrial manufacturing, consumer goods, engineering plants.</p><div class="mt-5 flex gap-3"><a href="contact.html" class="rounded-lg bg-brandCta px-5 py-2 text-sm font-semibold text-white">Enquire Now</a><a href="https://wa.me/917996200355" target="_blank" rel="noopener noreferrer" class="rounded-lg border border-sky-200 px-5 py-2 text-sm font-semibold text-brandDark">WhatsApp</a></div></article>
+          <article class="rounded-2xl border border-purple-200 bg-purple-50 p-8"><h2 class="font-heading text-2xl font-bold text-purple-900">Research & Development</h2><p class="mt-3 text-slate-600">Specialized hiring support for innovation, technical research, and product development teams.</p><p class="mt-2 text-sm"><span class="font-semibold text-purple-900">Hiring capabilities:</span> R&D analysts, lab experts, technical researchers, scientists.</p><p class="mt-2 text-sm"><span class="font-semibold text-purple-900">Industries served:</span> Technology, biotech, applied engineering research.</p><div class="mt-5 flex gap-3"><a href="contact.html" class="rounded-lg bg-brandCta px-5 py-2 text-sm font-semibold text-white">Enquire Now</a><a href="https://wa.me/917996200355" target="_blank" rel="noopener noreferrer" class="rounded-lg border border-sky-200 px-5 py-2 text-sm font-semibold text-brandDark">WhatsApp</a></div></article>
+          <article class="rounded-2xl border border-violet-200 bg-violet-50 p-8"><h2 class="font-heading text-2xl font-bold text-violet-900">IT Industry</h2><p class="mt-3 text-slate-600">Connecting organizations with top technology talent for modern product and platform needs.</p><p class="mt-2 text-sm"><span class="font-semibold text-violet-900">Hiring capabilities:</span> Developers, DevOps, QA engineers, product and data roles.</p><p class="mt-2 text-sm"><span class="font-semibold text-violet-900">Industries served:</span> SaaS, enterprise IT, fintech, digital services.</p><div class="mt-5 flex gap-3"><a href="contact.html" class="rounded-lg bg-brandCta px-5 py-2 text-sm font-semibold text-white">Enquire Now</a><a href="https://wa.me/917996200355" target="_blank" rel="noopener noreferrer" class="rounded-lg border border-sky-200 px-5 py-2 text-sm font-semibold text-brandDark">WhatsApp</a></div></article>
+          <article class="rounded-2xl border border-fuchsia-200 bg-fuchsia-50 p-8 md:col-span-2"><h2 class="font-heading text-2xl font-bold text-fuchsia-900">Retail Industry</h2><p class="mt-3 text-slate-600">Workforce planning and staffing for retail operations, customer experience, and store growth.</p><p class="mt-2 text-sm"><span class="font-semibold text-fuchsia-900">Hiring capabilities:</span> Store managers, floor staff, merchandisers, backend support.</p><p class="mt-2 text-sm"><span class="font-semibold text-fuchsia-900">Industries served:</span> Fashion, FMCG retail, supermarkets, lifestyle brands.</p><div class="mt-5 flex gap-3"><a href="contact.html" class="rounded-lg bg-brandCta px-5 py-2 text-sm font-semibold text-white">Enquire Now</a><a href="https://wa.me/917996200355" target="_blank" rel="noopener noreferrer" class="rounded-lg border border-sky-200 px-5 py-2 text-sm font-semibold text-brandDark">WhatsApp</a></div></article>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-gradient-to-r from-purple-900 via-violet-800 to-fuchsia-800 py-14 text-purple-100"><div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8"><div><h3 class="font-heading text-2xl font-bold text-white">SMC PVT LTD</h3><p class="mt-4 text-sm leading-relaxed">Sourcingia Management Consulting Pvt. Ltd. is your trusted recruitment partner for IT and non-IT talent solutions.</p><a href="#" class="mt-6 inline-block rounded-full border border-purple-100 px-3 py-1 text-xs hover:bg-white hover:text-brandCta">Instagram</a></div><div><h4 class="font-semibold text-white">Quick Links</h4><ul class="mt-4 space-y-3 text-sm"><li><a class="hover:text-white" href="index.html">Home</a></li><li><a class="hover:text-white" href="about.html">About Us</a></li><li><a class="hover:text-white" href="services.html">Our Services</a></li><li><a class="hover:text-white" href="contact.html">Contact Us</a></li></ul></div><div><h4 class="font-semibold text-white">Services</h4><ul class="mt-4 space-y-3 text-sm"><li>Real Estate & Construction</li><li>Manufacturing</li><li>Research & Development</li><li>IT Industry</li><li>Retail Industry</li></ul></div><div><h4 class="font-semibold text-white">Contact Us</h4><ul class="mt-4 space-y-3 text-sm"><li><a class="hover:text-white" href="tel:7996200355">+91 7996200355</a></li><li><a class="hover:text-white break-all" href="mailto:Sourcingiamanagementconsulting@gmail.com">Sourcingiamanagementconsulting@gmail.com</a></li><li><a class="font-semibold text-white hover:text-purple-100" href="https://wa.me/917996200355" target="_blank" rel="noopener noreferrer">Chat with us</a></li></ul></div></div><div class="mx-auto mt-10 max-w-7xl border-t border-purple-300/40 px-4 pt-6 sm:px-6 lg:px-8"><div class="flex flex-col items-start justify-between gap-3 text-xs sm:flex-row sm:items-center"><p>© <span id="year"></span> Sourcingia Management Consulting Pvt. Ltd. All rights reserved.</p><div class="flex gap-5"><a class="hover:text-white" href="#">Terms & Conditions</a><a class="hover:text-white" href="#">Privacy Policy</a><a class="hover:text-white" href="#">Refund Policy</a></div></div></div></footer>
+    <div id="floatingFab" class="fab-stack"><div class="fab-actions"><a href="https://wa.me/917996200355" target="_blank" rel="noopener noreferrer" class="fab-action-btn bg-emerald-500" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.5 3.5A10.1 10.1 0 0 0 3.5 17.2L2 22l4.9-1.5A10.1 10.1 0 1 0 20.5 3.5Zm-9.4 18.4h-.1a8.4 8.4 0 0 1-4.3-1.2l-.3-.2-2.5.8.8-2.4-.2-.3a8.4 8.4 0 1 1 6.6 3.3Zm4.8-6.5c-.3-.1-1.6-.8-1.8-.9-.3-.1-.5-.1-.7.3-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.4-2.3-1.3c-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6l.5-.6c.1-.1.2-.3.3-.4s0-.3-.1-.4l-.8-1.9c-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.1 3c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.5.6.1 1.2.1 1.6.1.5 0 1.6-.6 1.8-1.2s.2-1.1.2-1.2-.2-.2-.5-.3Z"/></svg></a><a href="tel:7996200355" class="fab-action-btn bg-brandCta" aria-label="Call now"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none"><path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.1.4 2.3.6 3.6.6.7 0 1.2.6 1.2 1.2V20c0 .7-.6 1.2-1.2 1.2C9.9 21.2 2.8 14.1 2.8 5.2 2.8 4.5 3.3 4 4 4h2.5c.7 0 1.2.6 1.2 1.2 0 1.2.2 2.5.6 3.6.1.4 0 .9-.2 1.2l-2.2 2.2Z"/></svg></a></div><button type="button" class="fab-main-btn" aria-label="Quick contact actions"><span></span><span></span><span></span></button></div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 700, easing: "ease-out-cubic", once: true, offset: 70 });
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
