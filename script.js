@@ -7,8 +7,10 @@ const mobileMenu = document.getElementById("mobileMenu");
 if (navbar) {
   const handleNavbar = () => {
     if (window.scrollY > 10) {
+      navbar.classList.remove("bg-black");
       navbar.classList.add("bg-brandSky", "shadow-md");
     } else {
+      navbar.classList.remove("bg-black");
       navbar.classList.add("bg-brandSky");
       navbar.classList.remove("shadow-md");
     }
