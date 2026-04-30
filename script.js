@@ -74,13 +74,13 @@ document.querySelectorAll('a').forEach(link => {
       if (splashScreen) {
         // Update animation duration for faster navigation
         const fill = splashScreen.querySelector('.splash-circle-fill');
-        if (fill) fill.style.animationDuration = '2s';
+        if (fill) fill.style.animationDuration = '1s';
         
         splashScreen.style.visibility = "visible";
         splashScreen.style.opacity = "1";
         setTimeout(() => {
           window.location.href = href;
-        }, 2000);
+        }, 1000);
       } else {
         window.location.href = href;
       }
