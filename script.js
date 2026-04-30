@@ -7,11 +7,8 @@ const mobileMenu = document.getElementById("mobileMenu");
 if (navbar) {
   const handleNavbar = () => {
     if (window.scrollY > 10) {
-      navbar.classList.remove("bg-black");
-      navbar.classList.add("bg-brandSky", "shadow-md");
+      navbar.classList.add("shadow-md");
     } else {
-      navbar.classList.remove("bg-black");
-      navbar.classList.add("bg-brandSky");
       navbar.classList.remove("shadow-md");
     }
   };
@@ -53,6 +50,60 @@ const runTypewriter = (element, text, speed = 40) => {
   tick();
 };
 
+// Splash Screen Logic
+const splashScreen = document.getElementById("splash-screen");
+if (splashScreen) {
+  // Hide splash screen after 3 seconds
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      splashScreen.style.opacity = "0";
+      setTimeout(() => {
+        splashScreen.style.visibility = "hidden";
+      }, 500);
+    }, 3000);
+  });
+}
+
+// Page Navigation Splash Logic
+document.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const href = link.getAttribute('href');
+    // Only trigger for internal links that aren't anchors or external
+    if (href && href.endsWith('.html') && !href.startsWith('http') && !href.startsWith('#')) {
+      e.preventDefault();
+      if (splashScreen) {
+        // Update animation duration for faster navigation
+        const fill = splashScreen.querySelector('.splash-circle-fill');
+        if (fill) fill.style.animationDuration = '2s';
+        
+        splashScreen.style.visibility = "visible";
+        splashScreen.style.opacity = "1";
+        setTimeout(() => {
+          window.location.href = href;
+        }, 2000);
+      } else {
+        window.location.href = href;
+      }
+    }
+  });
+});
+
+const toggleService = (btn) => {
+  const content = btn.parentElement.querySelector(".hidden-content");
+  const span = btn.querySelector("span");
+  const svg = btn.querySelector("svg");
+  
+  if (content.classList.contains("hidden")) {
+    content.classList.remove("hidden");
+    span.textContent = "View Less";
+    svg.style.transform = "rotate(180deg)";
+  } else {
+    content.classList.add("hidden");
+    span.textContent = "View More";
+    svg.style.transform = "rotate(0deg)";
+  }
+};
+
 const typewriterElements = Array.from(document.querySelectorAll("[data-typewriter]"));
 typewriterElements.forEach((element, order) => {
   const text = element.getAttribute("data-typewriter");
@@ -67,7 +118,7 @@ if (counters.length > 0) {
     const target = Number(counter.getAttribute("data-target") || 0);
     const suffix = counter.getAttribute("data-suffix") || "";
     let current = 0;
-    const step = Math.max(1, Math.ceil(target / 45));
+    const step = Math.max(1, Math.ceil(target / 150));
     const timer = window.setInterval(() => {
       current += step;
       if (current >= target) {
@@ -76,7 +127,7 @@ if (counters.length > 0) {
         counter.dataset.animated = "true";
       }
       counter.textContent = `${current}${suffix}`;
-    }, 28);
+    }, 45);
   };
 
   const observer = new IntersectionObserver(

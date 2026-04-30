@@ -21,10 +21,10 @@
         theme: {
           extend: {
             colors: {
-              brandSky: "#7c3aed",
-              brandLight: "#f3e8ff",
-              brandCta: "#6d28d9",
-              brandDark: "#2e1065"
+              brandSky: "#D4AF37",
+              brandLight: "#fffbeb",
+              brandCta: "#800000",
+              brandDark: "#4a0000"
             },
             fontFamily: {
               heading: ["Poppins", "sans-serif"],
@@ -35,6 +35,61 @@
       };
     </script>
     <style>
+      #splash-screen {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background-color: #800000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.5s ease-out, visibility 0.5s;
+      }
+      .splash-circle-container {
+        position: relative;
+        width: 180px;
+        height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .splash-circle-bg {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 4px solid rgba(212, 175, 55, 0.2);
+      }
+      .splash-circle-fill {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 4px solid #D4AF37;
+        clip-path: inset(100% 0 0 0);
+        animation: fillUp 3s linear forwards;
+      }
+      @keyframes fillUp {
+        from { clip-path: inset(100% 0 0 0); }
+        to { clip-path: inset(0 0 0 0); }
+      }
+      .splash-logo {
+        width: 100px;
+        height: auto;
+        z-index: 10;
+        animation: pulse 2s infinite ease-in-out;
+      }
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.05); opacity: 0.8; }
+      }
+      .splash-text {
+        margin-top: 24px;
+        color: #D4AF37;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        font-size: 1.2rem;
+      }
       .hero-bg {
         background-position: center;
         background-size: cover;
@@ -104,7 +159,7 @@
         height: 52px;
         border: 0;
         border-radius: 9999px;
-        background: #312e81;
+        background: #b45309;
         box-shadow: 0 10px 24px rgba(15, 23, 42, 0.35);
         display: inline-flex;
         align-items: center;
@@ -197,10 +252,21 @@
     </style>
   </head>
   <body class="overflow-x-hidden bg-white font-body text-slate-700 selection:bg-sky-200">
-    <header id="navbar" class="fixed inset-x-0 top-0 z-50 bg-gradient-to-r from-purple-700 via-violet-700 to-fuchsia-700 transition-all duration-300">
+    <div id="splash-screen">
+      <div class="splash-circle-container">
+        <div class="splash-circle-bg"></div>
+        <div class="splash-circle-fill"></div>
+        <img src="image-removebg-preview (23).png" alt="Sourcingia Logo" class="splash-logo">
+      </div>
+      <div class="splash-text">SOURCINGIA</div>
+    </div>
+    <header id="navbar" class="fixed inset-x-0 top-0 z-50 bg-[#800000] transition-all duration-300">
       <nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <a href="index.html" class="font-heading text-base font-bold text-white sm:text-lg">SMC PVT LTD</a>
-        <button id="menuToggle" class="ml-auto inline-flex shrink-0 rounded-md border border-sky-100 p-2 text-white" aria-label="Open menu">
+        <a href="index.html" class="flex items-center gap-2 sm:gap-4">
+          <img src="image-removebg-preview (23).png" alt="SMC Logo" class="h-14 w-auto sm:h-20" />
+          <img src="image-removebg-preview (25).png" alt="SOURCINGIA" class="h-20 w-auto sm:h-24" />
+        </a>
+        <button id="menuToggle" class="ml-auto inline-flex shrink-0 rounded-md border border-amber-500 p-2 text-white" aria-label="Open menu">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
           </svg>
@@ -224,7 +290,7 @@
       <section class="hero-bg relative flex min-h-[78vh] items-center overflow-hidden bg-slate-900 pt-24 sm:min-h-screen sm:pt-28" style="background-image: linear-gradient(rgba(2, 6, 23, 0.72), rgba(2, 6, 23, 0.72)), url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80');">
         <div class="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div class="max-w-3xl">
-            <p class="mb-4 inline-flex rounded-full border border-purple-300/30 bg-purple-300/20 px-4 py-1 text-sm text-purple-100" data-typewriter="Recruitment & Staffing Excellence">Recruitment & Staffing Excellence</p>
+            <p class="mb-4 inline-flex rounded-full border border-amber-300/30 bg-amber-300/20 px-4 py-1 text-sm text-brandSky" data-typewriter="Recruitment & Staffing Excellence">Recruitment & Staffing Excellence</p>
             <h1 class="font-heading text-3xl font-extrabold leading-tight text-white sm:text-5xl lg:text-6xl">Building Strong Teams. Powering Business Growth.</h1>
             <p class="mt-6 max-w-2xl text-base text-slate-200 sm:text-lg">Sourcingia Management Consulting Pvt. Ltd. delivers expert recruitment and staffing solutions with deep industry understanding across IT and non-IT sectors.</p>
             <div class="mt-8 flex flex-wrap gap-4">
@@ -235,11 +301,35 @@
         </div>
       </section>
 
-      <section data-aos="fade-up" class="section-bg-office py-16 sm:py-20">
+      <section class="bg-white py-12 border-b border-gray-100">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-2 gap-8 md:grid-cols-4 text-center">
+            <div data-aos="fade-up">
+              <p class="text-4xl font-bold text-brandSky counter" data-target="500" data-suffix="+">0+</p>
+              <p class="mt-2 text-xs font-bold uppercase tracking-widest text-slate-500">Happy Clients</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="100">
+              <p class="text-4xl font-bold text-brandSky counter" data-target="12" data-suffix="+">0+</p>
+              <p class="mt-2 text-xs font-bold uppercase tracking-widest text-slate-500">Years Experience</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="200">
+              <p class="text-4xl font-bold text-brandSky counter" data-target="10" data-suffix="+">0+</p>
+              <p class="mt-2 text-xs font-bold uppercase tracking-widest text-slate-500">Industries Served</p>
+            </div>
+            <div data-aos="fade-up" data-aos-delay="300">
+              <p class="text-4xl font-bold text-brandSky counter" data-target="1000" data-suffix="+">0+</p>
+              <p class="mt-2 text-xs font-bold uppercase tracking-widest text-slate-500">Placements Delivered</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section data-aos="fade-up" class="bg-white py-16 sm:py-20">
         <div class="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
-            <h2 class="font-heading text-3xl font-bold text-brandDark">Built on Experience. Focused on Results.</h2>
-            <p class="mt-5 leading-relaxed text-slate-600">Sourcingia Management Consulting Pvt. Ltd. is a newly established recruitment and staffing firm built on strong, proven industry experience. We have successfully delivered hiring solutions across industries in India and global markets, and now aim to strengthen core industry staffing with a client-focused approach.</p>
+            <h2 class="font-heading text-3xl font-bold text-brandSky">Built on Experience. Led by Experts.</h2>
+            <p class="mt-5 leading-relaxed text-slate-600">Sourcingia is a newly established recruitment firm powered by a team with 12+ years of expertise in IT, Non-IT, Real Estate, and Construction sectors. We specialize in core recruitment and basic STEM project requirements, delivering precision-driven hiring solutions for both domestic and global markets.</p>
+            <p class="mt-4 leading-relaxed text-slate-600">Our consultative approach ensures we understand the unique technical and cultural needs of every role. We are committed to bridging the gap between top-tier talent and growing organizations through quality-first screening and reliable delivery models.</p>
           </div>
           <div class="rounded-2xl bg-brandLight p-8">
             <p class="text-sm font-semibold uppercase tracking-wide text-brandCta" data-typewriter="Trusted by hiring teams">Trusted by hiring teams</p>
@@ -253,40 +343,108 @@
         </div>
       </section>
 
-      <section data-aos="fade-up" class="bg-slate-50 py-16 sm:py-20">
+      <section data-aos="fade-up" class="bg-white py-16 sm:py-20">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 class="font-heading text-3xl font-bold text-brandDark">Explore All Pages from Home</h2>
-          <p class="mt-3 max-w-3xl text-slate-600">Browse each page section-wise below, then open the full page for complete details.</p>
+          <h2 class="font-heading text-3xl font-bold text-brandSky">ABOUT US</h2>
           <div class="mt-10 space-y-6">
-            <article data-aos="fade-up" class="rounded-2xl border border-purple-100 bg-white p-7 shadow-sm">
-              <p class="text-xs font-semibold uppercase tracking-wider text-brandCta">About Section</p>
-              <h3 class="mt-2 font-heading text-2xl font-bold text-brandDark">Who We Are</h3>
-              <p class="mt-3 leading-relaxed text-slate-600">We provide recruitment and staffing solutions across IT and Non-IT domains, supporting pan-India and international markets. Our core focus includes STEM-driven projects, global IT hiring, and specialized talent solutions for Real Estate and Construction sectors.</p>
-              <p class="mt-3 leading-relaxed text-slate-600">Built on strong industry experience, we combine consultative planning, role mapping, and quality-first screening to deliver candidates who match technical requirements and team culture. We support startups, growing businesses, and enterprise teams with both immediate hiring needs and long-term workforce planning.</p>
-              <ul class="mt-4 grid gap-2 text-sm text-slate-600 sm:grid-cols-2">
-                <li class="rounded-lg bg-brandLight px-3 py-2">IT and Non-IT hiring support</li>
-                <li class="rounded-lg bg-brandLight px-3 py-2">India and global market coverage</li>
-                <li class="rounded-lg bg-brandLight px-3 py-2">STEM-focused project hiring</li>
-                <li class="rounded-lg bg-brandLight px-3 py-2">Dedicated client partnership model</li>
-              </ul>
-              <a href="about.html" class="mt-5 inline-flex rounded-lg bg-brandCta px-5 py-2 text-sm font-semibold text-white transition hover:bg-sky-500">View More</a>
+            <article data-aos="fade-up" class="rounded-2xl border border-amber-100 bg-white p-7 shadow-sm">
+              <p class="text-xs font-semibold uppercase tracking-wider text-brandCta">Our Expertise</p>
+              <h3 class="mt-2 font-heading text-2xl font-bold text-brandSky">Comprehensive STEM & Industry Recruitment</h3>
+              <p class="mt-3 leading-relaxed text-slate-600">We provide recruitment and staffing solutions across a broad spectrum of domains, supporting pan-India and international markets. Our core focus extends beyond IT and Non-IT to include specialized STEM projects, healthcare, and engineering sectors.</p>
+              
+              <div class="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                <div>
+                  <h4 class="font-heading text-lg font-bold text-brandDark border-b-2 border-brandSky pb-1 mb-4">Technology & Science</h4>
+                  <ul class="space-y-2 text-sm text-slate-600">
+                    <li class="flex items-start gap-2"><span class="text-brandSky">●</span> <strong>Technology:</strong> Software Engineers, Data Scientists, Cybersecurity Analysts, Network Engineers.</li>
+                    <li class="flex items-start gap-2"><span class="text-brandSky">●</span> <strong>Science:</strong> Chemists, Physicists, Environmental Scientists, Geologists.</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-heading text-lg font-bold text-brandDark border-b-2 border-brandSky pb-1 mb-4">Engineering & Math</h4>
+                  <ul class="space-y-2 text-sm text-slate-600">
+                    <li class="flex items-start gap-2"><span class="text-brandSky">●</span> <strong>Engineering:</strong> Civil, Mechanical, Electrical, Chemical, Aerospace, Biomedical, and Robotics Engineers.</li>
+                    <li class="flex items-start gap-2"><span class="text-brandSky">●</span> <strong>Mathematics:</strong> Statisticians, Actuaries, Operations Research Analysts, Cryptographers.</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-heading text-lg font-bold text-brandDark border-b-2 border-brandSky pb-1 mb-4">Healthcare & More</h4>
+                  <ul class="space-y-2 text-sm text-slate-600">
+                    <li class="flex items-start gap-2"><span class="text-brandSky">●</span> <strong>Healthcare:</strong> Nurse Practitioners, Medical Services Managers, Genetic Counselors.</li>
+                    <li class="flex items-start gap-2"><span class="text-brandSky">●</span> <strong>Core Industry:</strong> Real Estate and Construction, Manufacturing, and Retail.</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-10 grid gap-6 md:grid-cols-2">
+                <div class="rounded-xl bg-amber-50 p-5">
+                  <h4 class="font-heading font-bold text-brandDark mb-3 uppercase tracking-wide text-sm">Advantages of STEM Careers</h4>
+                  <ul class="grid grid-cols-1 gap-2 text-xs text-slate-600">
+                    <li>✓ High Demand & Job Security</li>
+                    <li>✓ Competitive Salaries & Growth</li>
+                    <li>✓ Intellectual Stimulation & Innovation</li>
+                    <li>✓ Global Societal Impact</li>
+                    <li>✓ Diverse Career Pathways</li>
+                  </ul>
+                </div>
+                <div class="rounded-xl bg-slate-50 p-5">
+                  <h4 class="font-heading font-bold text-brandDark mb-3 uppercase tracking-wide text-sm">Career Planning Strategies</h4>
+                  <ul class="grid grid-cols-1 gap-2 text-xs text-slate-600">
+                    <li>• Identify Interests & Strengths</li>
+                    <li>• Develop Essential Skills</li>
+                    <li>• Pursue Relevant Education</li>
+                    <li>• Gain Practical Experience</li>
+                    <li>• Networking & Mentorship</li>
+                  </ul>
+                </div>
+              </div>
+
+              <a href="about.html" class="mt-8 inline-flex rounded-lg bg-brandCta px-5 py-2 text-sm font-semibold text-white transition hover:bg-sky-500">View Detailed STEM Guide</a>
             </article>
-            <article data-aos="fade-up" data-aos-delay="80" class="rounded-2xl border border-purple-100 bg-white p-7 shadow-sm">
-              <p class="text-xs font-semibold uppercase tracking-wider text-brandCta">Services Section</p>
-              <h3 class="mt-2 font-heading text-2xl font-bold text-brandDark">What We Deliver</h3>
-              <p class="mt-3 leading-relaxed text-slate-600">Our hiring solutions cover Real Estate and Construction, Manufacturing, Research and Development, IT Industry, and Retail Industry. We build role-specific pipelines aligned to project timelines and operational workforce goals.</p>
-              <p class="mt-3 leading-relaxed text-slate-600">From leadership mandates to high-volume staffing drives, our process is designed for speed, quality, and consistency. We handle requirement discovery, sourcing, profile validation, interview coordination, and closure support so your teams can focus on business outcomes.</p>
-              <ul class="mt-4 grid gap-2 text-sm text-slate-600 sm:grid-cols-2">
-                <li class="rounded-lg bg-brandLight px-3 py-2">Permanent and contract hiring</li>
-                <li class="rounded-lg bg-brandLight px-3 py-2">Project-based workforce ramp-up</li>
-                <li class="rounded-lg bg-brandLight px-3 py-2">Domain-specific candidate pipelines</li>
-                <li class="rounded-lg bg-brandLight px-3 py-2">End-to-end hiring execution</li>
+            <article data-aos="fade-up" data-aos-delay="80" class="rounded-2xl border border-amber-100 bg-white p-7 shadow-sm">
+              <p class="text-xs font-semibold uppercase tracking-wider text-brandCta">Our Services</p>
+              <h3 class="mt-2 font-heading text-2xl font-bold text-brandSky">What We Deliver</h3>
+              <p class="mt-3 leading-relaxed text-slate-600">We provide specialized recruitment and workforce planning across high-impact business verticals, including core STEM projects, global IT hiring, and essential industrial sectors. Our approach is built on a deep understanding of domain-specific challenges and a commitment to delivering precision-driven hiring solutions that align with your strategic goals.</p>
+              <p class="mt-3 leading-relaxed text-slate-600">From leadership mandates to high-volume staffing drives, our process is designed for speed, quality, and consistency. We handle every stage of the hiring cycle—from requirement discovery and talent mapping to profile validation and interview coordination—ensuring that your internal teams can remain focused on core business outcomes while we secure your future workforce.</p>
+              
+              <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="rounded-lg bg-slate-50 p-4">
+                  <p class="font-bold text-brandDark text-sm">Real Estate & Construction</p>
+                  <p class="text-xs text-slate-500 mt-1">Infrastructure, Commercial, Residential.</p>
+                </div>
+                <div class="rounded-lg bg-slate-50 p-4">
+                  <p class="font-bold text-brandDark text-sm">Manufacturing</p>
+                  <p class="text-xs text-slate-500 mt-1">Production, QA, Plant Operations.</p>
+                </div>
+                <div class="rounded-lg bg-slate-50 p-4">
+                  <p class="font-bold text-brandDark text-sm">IT & Technology</p>
+                  <p class="text-xs text-slate-500 mt-1">SaaS, AI, Cloud, Cybersecurity.</p>
+                </div>
+                <div class="rounded-lg bg-slate-50 p-4">
+                  <p class="font-bold text-brandDark text-sm">Research & Development</p>
+                  <p class="text-xs text-slate-500 mt-1">Innovation Labs, Scientists, Analysts.</p>
+                </div>
+                <div class="rounded-lg bg-slate-50 p-4">
+                  <p class="font-bold text-brandDark text-sm">Retail & FMCG</p>
+                  <p class="text-xs text-slate-500 mt-1">Store Management, Merchandising.</p>
+                </div>
+                <div class="rounded-lg bg-slate-50 p-4">
+                  <p class="font-bold text-brandDark text-sm">STEM Specialist Hiring</p>
+                  <p class="text-xs text-slate-500 mt-1">Science, Tech, Engineering, Math.</p>
+                </div>
+              </div>
+
+              <ul class="mt-8 grid gap-2 text-sm text-slate-600 sm:grid-cols-2">
+                <li class="rounded-lg bg-brandLight px-3 py-2">✓ Permanent and contract hiring</li>
+                <li class="rounded-lg bg-brandLight px-3 py-2">✓ Project-based workforce ramp-up</li>
+                <li class="rounded-lg bg-brandLight px-3 py-2">✓ Domain-specific candidate pipelines</li>
+                <li class="rounded-lg bg-brandLight px-3 py-2">✓ End-to-end hiring execution</li>
               </ul>
-              <a href="services.html" class="mt-5 inline-flex rounded-lg bg-brandCta px-5 py-2 text-sm font-semibold text-white transition hover:bg-sky-500">View More</a>
+              <a href="services.html" class="mt-6 inline-flex rounded-lg bg-brandCta px-5 py-2 text-sm font-semibold text-white transition hover:bg-sky-500">Explore Full Services</a>
             </article>
-            <article data-aos="fade-up" data-aos-delay="140" class="rounded-2xl border border-purple-100 bg-white p-7 shadow-sm">
+            <article data-aos="fade-up" data-aos-delay="140" class="rounded-2xl border border-amber-100 bg-white p-7 shadow-sm">
               <p class="text-xs font-semibold uppercase tracking-wider text-brandCta">Contact Section</p>
-              <h3 class="mt-2 font-heading text-2xl font-bold text-brandDark">Get in Touch</h3>
+              <h3 class="mt-2 font-heading text-2xl font-bold text-brandSky">Get in Touch</h3>
               <p class="mt-3 leading-relaxed text-slate-600">Share your hiring requirements through our contact form, phone, or WhatsApp. Our team will respond with a tailored staffing approach and quick turnaround support for your open roles.</p>
               <p class="mt-3 leading-relaxed text-slate-600">Whether you are hiring for one strategic role or building a complete team, we assess your requirement in detail and propose the right engagement model. We prioritize transparent communication, timeline clarity, and reliable support throughout the hiring cycle.</p>
               <ul class="mt-4 grid gap-2 text-sm text-slate-600 sm:grid-cols-2">
@@ -301,38 +459,330 @@
         </div>
       </section>
 
-      <section data-aos="fade-up" class="bg-slate-50 py-16 sm:py-20">
+      <section data-aos="fade-up" class="bg-white py-16 sm:py-20">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 class="font-heading text-3xl font-bold text-brandDark">Our Services Overview</h2>
-          <p class="mt-3 max-w-2xl text-slate-600">Specialized recruitment expertise across high-impact business verticals.</p>
-          <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <article class="rounded-2xl border border-sky-100 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md"><h3 class="font-heading text-xl font-semibold text-brandDark">Real Estate & Construction</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">Providing skilled workforce for infrastructure and real estate development.</p></article>
-            <article class="rounded-2xl border border-sky-100 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md"><h3 class="font-heading text-xl font-semibold text-brandDark">Manufacturing</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">End-to-end staffing solutions for production and operations.</p></article>
-            <article class="rounded-2xl border border-sky-100 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md"><h3 class="font-heading text-xl font-semibold text-brandDark">Research & Development</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">Hiring specialized talent for innovation and technical research.</p></article>
-            <article class="rounded-2xl border border-sky-100 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md"><h3 class="font-heading text-xl font-semibold text-brandDark">IT Industry</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">Connecting businesses with top tech professionals.</p></article>
-            <article class="rounded-2xl border border-sky-100 bg-white p-6 transition hover:-translate-y-1 hover:shadow-md sm:col-span-2 lg:col-span-1"><h3 class="font-heading text-xl font-semibold text-brandDark">Retail Industry</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">Staffing solutions for retail operations and management.</p></article>
+          <h2 class="font-heading text-3xl font-bold text-brandSky">Our Specialized Recruitment Verticals</h2>
+          <div class="mt-6 max-w-4xl space-y-4">
+            <p class="leading-relaxed text-slate-600">Sourcingia Management Consulting Pvt. Ltd. provides a multi-disciplinary approach to recruitment, ensuring that every industry we serve is supported by dedicated domain experts. We understand that hiring for a construction site requires a completely different strategy than sourcing for a cybersecurity team or a manufacturing plant. Our services are designed to bridge these gaps with precision.</p>
+            <p class="leading-relaxed text-slate-600">By combining market-leading talent intelligence with a hands-on consultative model, we help organizations navigate the complexities of modern workforce planning. We don't just find candidates; we identify the talent that will drive your operational excellence and long-term innovation across these core verticals:</p>
+          </div>
+          <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <article class="group relative overflow-hidden rounded-2xl border border-amber-100 bg-amber-50 p-6 transition-all duration-300 hover:shadow-lg">
+              <h3 class="font-heading text-xl font-semibold text-brandSky">Real Estate & Construction</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">Specialized hiring for infrastructure, residential, and commercial development projects. We source site engineers, project managers, and procurement experts.</p>
+              <div class="hidden-content hidden mt-4 space-y-2 border-t border-amber-200 pt-4">
+                <ul class="space-y-1 text-xs text-slate-600">
+                  <li>• Civil & Structural Engineers</li>
+                  <li>• Project Planning & Control</li>
+                  <li>• Quantity Surveyors & Costing</li>
+                  <li>• MEP & HVAC Specialists</li>
+                  <li>• Site Supervisors & Foremen</li>
+                  <li>• Procurement & Supply Chain</li>
+                  <li>• Safety & Quality Assurance</li>
+                  <li>• Real Estate Sales & CRM</li>
+                  <li>• Property Management Leads</li>
+                  <li>• Architecture & Interior Design</li>
+                </ul>
+              </div>
+              <button onclick="toggleService(this)" class="mt-4 inline-flex items-center text-xs font-bold uppercase tracking-wider text-brandCta hover:text-brandDark">
+                <span>View More</span>
+                <svg class="ml-1 h-3 w-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+            </article>
+
+            <article class="group relative overflow-hidden rounded-2xl border border-amber-100 bg-amber-50 p-6 transition-all duration-300 hover:shadow-lg">
+              <h3 class="font-heading text-xl font-semibold text-brandSky">Manufacturing</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">Staffing solutions for production units, quality control, and plant operations. We provide plant operators, line managers, and QA specialists.</p>
+              <div class="hidden-content hidden mt-4 space-y-2 border-t border-amber-200 pt-4">
+                <ul class="space-y-1 text-xs text-slate-600">
+                  <li>• Plant Operations Management</li>
+                  <li>• Production & Assembly Leads</li>
+                  <li>• Quality Control & QA/QC</li>
+                  <li>• Supply Chain & Logistics</li>
+                  <li>• Maintenance & Reliability</li>
+                  <li>• Industrial Engineering</li>
+                  <li>• Health, Safety & Environment</li>
+                  <li>• Inventory & Warehouse Mgmt</li>
+                  <li>• Lean & Six Sigma Experts</li>
+                  <li>• Procurement & Sourcing</li>
+                </ul>
+              </div>
+              <button onclick="toggleService(this)" class="mt-4 inline-flex items-center text-xs font-bold uppercase tracking-wider text-brandCta hover:text-brandDark">
+                <span>View More</span>
+                <svg class="ml-1 h-3 w-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+            </article>
+
+            <article class="group relative overflow-hidden rounded-2xl border border-amber-100 bg-amber-50 p-6 transition-all duration-300 hover:shadow-lg">
+              <h3 class="font-heading text-xl font-semibold text-brandSky">Research & Development</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">Connecting innovation-driven firms with scientists, R&D analysts, and technical researchers for product development and lab operations.</p>
+              <div class="hidden-content hidden mt-4 space-y-2 border-t border-amber-200 pt-4">
+                <ul class="space-y-1 text-xs text-slate-600">
+                  <li>• Research Scientists & Analysts</li>
+                  <li>• Product Development Leads</li>
+                  <li>• Laboratory Technicians</li>
+                  <li>• Technical Research Experts</li>
+                  <li>• Innovation Strategy Leads</li>
+                  <li>• Applied Science Specialists</li>
+                  <li>• Testing & Validation Teams</li>
+                  <li>• R&D Project Management</li>
+                  <li>• Intellectual Property Support</li>
+                  <li>• Prototype Engineering</li>
+                </ul>
+              </div>
+              <button onclick="toggleService(this)" class="mt-4 inline-flex items-center text-xs font-bold uppercase tracking-wider text-brandCta hover:text-brandDark">
+                <span>View More</span>
+                <svg class="ml-1 h-3 w-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+            </article>
+
+            <article class="group relative overflow-hidden rounded-2xl border border-amber-100 bg-amber-50 p-6 transition-all duration-300 hover:shadow-lg">
+              <h3 class="font-heading text-xl font-semibold text-brandSky">IT & Technology</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">Full-spectrum tech hiring for software development, AI, cybersecurity, and data science. We support SaaS, fintech, and enterprise IT teams.</p>
+              <div class="hidden-content hidden mt-4 space-y-2 border-t border-amber-200 pt-4">
+                <ul class="space-y-1 text-xs text-slate-600">
+                  <li>• Full-Stack Developers</li>
+                  <li>• Data Scientists & AI/ML</li>
+                  <li>• Cybersecurity Specialists</li>
+                  <li>• Cloud & DevOps Engineers</li>
+                  <li>• Mobile App Developers</li>
+                  <li>• UI/UX Designers</li>
+                  <li>• Product Managers</li>
+                  <li>• QA & Automation Engineers</li>
+                  <li>• IT Infrastructure Leads</li>
+                  <li>• Blockchain & Web3 Experts</li>
+                </ul>
+              </div>
+              <button onclick="toggleService(this)" class="mt-4 inline-flex items-center text-xs font-bold uppercase tracking-wider text-brandCta hover:text-brandDark">
+                <span>View More</span>
+                <svg class="ml-1 h-3 w-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+            </article>
+
+            <article class="group relative overflow-hidden rounded-2xl border border-amber-100 bg-amber-50 p-6 transition-all duration-300 hover:shadow-lg">
+              <h3 class="font-heading text-xl font-semibold text-brandSky">Retail Industry</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">Workforce planning for store management, floor operations, and merchandising. We help brands scale their retail footprint efficiently.</p>
+              <div class="hidden-content hidden mt-4 space-y-2 border-t border-amber-200 pt-4">
+                <ul class="space-y-1 text-xs text-slate-600">
+                  <li>• Store Operations Managers</li>
+                  <li>• Retail Merchandisers</li>
+                  <li>• Customer Experience Leads</li>
+                  <li>• Inventory & Stock Control</li>
+                  <li>• Visual Merchandising Experts</li>
+                  <li>• Retail Sales & CRM Leads</li>
+                  <li>• E-commerce Operations</li>
+                  <li>• Supply Chain & Distribution</li>
+                  <li>• Retail Marketing & Branding</li>
+                  <li>• Store Expansion Strategy</li>
+                </ul>
+              </div>
+              <button onclick="toggleService(this)" class="mt-4 inline-flex items-center text-xs font-bold uppercase tracking-wider text-brandCta hover:text-brandDark">
+                <span>View More</span>
+                <svg class="ml-1 h-3 w-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+            </article>
+
+            <article class="group relative overflow-hidden rounded-2xl border border-amber-100 bg-amber-50 p-6 transition-all duration-300 hover:shadow-lg">
+              <h3 class="font-heading text-xl font-semibold text-brandSky">STEM Specialized Hiring</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">Core recruitment for Science, Technology, Engineering, and Math roles across healthcare, aerospace, and robotics sectors.</p>
+              <div class="hidden-content hidden mt-4 space-y-2 border-t border-amber-200 pt-4">
+                <ul class="space-y-1 text-xs text-slate-600">
+                  <li>• Aerospace & Aviation Engineers</li>
+                  <li>• Robotics & Automation Experts</li>
+                  <li>• Biomedical & Biotech Scientists</li>
+                  <li>• Environmental & Geo Scientists</li>
+                  <li>• Mathematicians & Statisticians</li>
+                  <li>• Actuarial & Risk Analysts</li>
+                  <li>• Healthcare STEM Specialists</li>
+                  <li>• Chemical & Process Engineers</li>
+                  <li>• Physics & Material Scientists</li>
+                  <li>• Cryptography & Data Security</li>
+                </ul>
+              </div>
+              <button onclick="toggleService(this)" class="mt-4 inline-flex items-center text-xs font-bold uppercase tracking-wider text-brandCta hover:text-brandDark">
+                <span>View More</span>
+                <svg class="ml-1 h-3 w-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+            </article>
+          </div>
+
+          <div class="mt-16 grid gap-10 lg:grid-cols-2 lg:items-center">
+            <div class="space-y-6">
+              <h3 class="font-heading text-2xl font-bold text-brandSky">The Sourcingia Advantage in Service Delivery</h3>
+              <p class="leading-relaxed text-slate-600">Our recruitment philosophy is centered on the belief that a successful hire is the result of deep collaboration between our consultants and your internal stakeholders. We go beyond traditional database searches, utilizing a proactive headhunting approach to reach passive talent who are top performers in their respective fields.</p>
+              <p class="leading-relaxed text-slate-600">We take full ownership of the recruitment lifecycle, providing you with data-backed insights on candidate availability, salary benchmarks, and competitor mapping. This transparency allows you to make informed hiring decisions that are aligned with the current market reality and your long-term organizational goals.</p>
+              <p class="leading-relaxed text-slate-600">Whether it's a single executive search or a large-scale project-based ramp-up, our commitment remains the same: to deliver high-quality, pre-screened, and culturally aligned talent with a turnaround time that keeps your business moving forward.</p>
+            </div>
+            <div class="rounded-3xl bg-brandLight p-8">
+              <h4 class="font-heading text-xl font-bold text-brandCta mb-4">Our Service Commitment</h4>
+              <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                  <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brandSky text-white text-xs font-bold">1</span>
+                  <p class="text-sm text-slate-700"><strong>Quality First Screening:</strong> Every candidate undergoes a multi-stage validation process before reaching your desk.</p>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brandSky text-white text-xs font-bold">2</span>
+                  <p class="text-sm text-slate-700"><strong>Global Standards:</strong> We apply international recruitment best practices to every search, whether domestic or global.</p>
+                </li>
+                <li class="flex items-start gap-3">
+                  <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brandSky text-white text-xs font-bold">3</span>
+                  <p class="text-sm text-slate-700"><strong>Agile Execution:</strong> Our teams are structured to react quickly to changing requirements and tight project timelines.</p>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
-      <section data-aos="fade-up" class="section-bg-industry py-16 sm:py-20">
+      <section data-aos="fade-up" class="bg-white py-16 sm:py-20">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 class="font-heading text-3xl font-bold text-brandDark">Why Choose Us</h2>
+          <h2 class="font-heading text-3xl font-bold text-brandSky">Why Choose Us</h2>
           <p class="mt-4 max-w-4xl leading-relaxed text-slate-600">Organizations choose Sourcingia Management Consulting Pvt. Ltd. because we deliver more than profiles. We combine hiring strategy, domain understanding, and execution strength to help businesses build dependable teams without delays.</p>
           <div class="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <article class="rounded-2xl border border-purple-100 bg-purple-50 p-6"><h3 class="font-heading text-xl font-semibold text-brandDark">Business-First Hiring Strategy</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">We align every hiring plan with your business goals, growth stage, and role priorities for better outcomes.</p></article>
-            <article class="rounded-2xl border border-purple-100 bg-purple-50 p-6"><h3 class="font-heading text-xl font-semibold text-brandDark">Deep Multi-Sector Expertise</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">We support IT, Non-IT, STEM, Real Estate and Construction, Manufacturing, R&amp;D, and Retail hiring needs.</p></article>
-            <article class="rounded-2xl border border-purple-100 bg-purple-50 p-6"><h3 class="font-heading text-xl font-semibold text-brandDark">Pan-India and Global Reach</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">Our sourcing network supports domestic and international roles, including global IT hiring requirements.</p></article>
-            <article class="rounded-2xl border border-purple-100 bg-purple-50 p-6"><h3 class="font-heading text-xl font-semibold text-brandDark">Fast Yet Quality-Driven Delivery</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">We maintain turnaround speed while ensuring role-fit, technical quality, and hiring reliability.</p></article>
-            <article class="rounded-2xl border border-purple-100 bg-purple-50 p-6"><h3 class="font-heading text-xl font-semibold text-brandDark">Flexible Staffing Models</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">Choose from permanent, contract, and project-based staffing models designed around your timelines.</p></article>
-            <article class="rounded-2xl border border-purple-100 bg-purple-50 p-6"><h3 class="font-heading text-xl font-semibold text-brandDark">End-to-End Hiring Support</h3><p class="mt-3 text-sm leading-relaxed text-slate-600">From requirement discovery to onboarding, we stay accountable through each stage of the hiring cycle.</p></article>
+            <article class="rounded-2xl border border-amber-100 bg-amber-50 p-6">
+              <h3 class="font-heading text-xl font-semibold text-brandDark">Business-First Hiring Strategy</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">We align every hiring plan with your business goals, growth stage, and role priorities for better outcomes.</p>
+              <div class="hidden-content hidden mt-4 space-y-2 border-t border-amber-200 pt-4">
+                <ul class="space-y-1 text-xs text-slate-600">
+                  <li>• Goal-Oriented Talent Mapping</li>
+                  <li>• Strategic Role Prioritization</li>
+                  <li>• Growth-Stage Specific Hiring</li>
+                  <li>• Market Reality Alignment</li>
+                  <li>• Competency Framework Design</li>
+                  <li>• Long-Term Workforce Planning</li>
+                  <li>• ROI-Driven Recruitment</li>
+                  <li>• Stakeholder Goal Integration</li>
+                  <li>• Scalable Hiring Frameworks</li>
+                  <li>• Performance-Based Selection</li>
+                </ul>
+              </div>
+              <button onclick="toggleService(this)" class="mt-4 inline-flex items-center text-xs font-bold uppercase tracking-wider text-brandCta hover:text-brandDark">
+                <span>View More</span>
+                <svg class="ml-1 h-3 w-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+            </article>
+
+            <article class="rounded-2xl border border-amber-100 bg-amber-50 p-6">
+              <h3 class="font-heading text-xl font-semibold text-brandDark">Deep Multi-Sector Expertise</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">We support IT, Non-IT, STEM, Real Estate and Construction, Manufacturing, R&amp;D, and Retail hiring needs.</p>
+              <div class="hidden-content hidden mt-4 space-y-2 border-t border-amber-200 pt-4">
+                <ul class="space-y-1 text-xs text-slate-600">
+                  <li>• Specialized IT/Tech Sourcing</li>
+                  <li>• Core Engineering Recruitment</li>
+                  <li>• STEM Project Staffing</li>
+                  <li>• Real Estate Vertical Experts</li>
+                  <li>• Manufacturing Ops Hiring</li>
+                  <li>• R&D & Scientific Talent</li>
+                  <li>• Retail & FMCG Specialists</li>
+                  <li>• Healthcare STEM Support</li>
+                  <li>• Executive Search Services</li>
+                  <li>• High-Volume Non-IT Staffing</li>
+                </ul>
+              </div>
+              <button onclick="toggleService(this)" class="mt-4 inline-flex items-center text-xs font-bold uppercase tracking-wider text-brandCta hover:text-brandDark">
+                <span>View More</span>
+                <svg class="ml-1 h-3 w-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+            </article>
+
+            <article class="rounded-2xl border border-amber-100 bg-amber-50 p-6">
+              <h3 class="font-heading text-xl font-semibold text-brandDark">Pan-India and Global Reach</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">Our sourcing network supports domestic and international roles, including global IT hiring requirements.</p>
+              <div class="hidden-content hidden mt-4 space-y-2 border-t border-amber-200 pt-4">
+                <ul class="space-y-1 text-xs text-slate-600">
+                  <li>• Pan-India Sourcing Network</li>
+                  <li>• International Talent Acquisition</li>
+                  <li>• Global IT Hiring (US/Europe/Asia)</li>
+                  <li>• Cross-Border Recruitment</li>
+                  <li>• Remote Talent Solutions</li>
+                  <li>• Relocation Support Guidance</li>
+                  <li>• Multi-Regional Compliance</li>
+                  <li>• Global Talent Benchmarking</li>
+                  <li>• Expat Hiring Expertise</li>
+                  <li>• Virtual Interview Management</li>
+                </ul>
+              </div>
+              <button onclick="toggleService(this)" class="mt-4 inline-flex items-center text-xs font-bold uppercase tracking-wider text-brandCta hover:text-brandDark">
+                <span>View More</span>
+                <svg class="ml-1 h-3 w-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+            </article>
+
+            <article class="rounded-2xl border border-amber-100 bg-amber-50 p-6">
+              <h3 class="font-heading text-xl font-semibold text-brandDark">Fast Yet Quality-Driven Delivery</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">We maintain turnaround speed while ensuring role-fit, technical quality, and hiring reliability.</p>
+              <div class="hidden-content hidden mt-4 space-y-2 border-t border-amber-200 pt-4">
+                <ul class="space-y-1 text-xs text-slate-600">
+                  <li>• Rapid Response Sourcing</li>
+                  <li>• Quality-First Screening</li>
+                  <li>• Technical Fit Assessment</li>
+                  <li>• Cultural Alignment Checks</li>
+                  <li>• Fast Turnaround (TAT)</li>
+                  <li>• Reliable Candidate Pipelines</li>
+                  <li>• Rigorous Profile Validation</li>
+                  <li>• Speed-to-Market Strategy</li>
+                  <li>• High-Quality Shortlisting</li>
+                  <li>• Performance-Ready Talent</li>
+                </ul>
+              </div>
+              <button onclick="toggleService(this)" class="mt-4 inline-flex items-center text-xs font-bold uppercase tracking-wider text-brandCta hover:text-brandDark">
+                <span>View More</span>
+                <svg class="ml-1 h-3 w-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+            </article>
+
+            <article class="rounded-2xl border border-amber-100 bg-amber-50 p-6">
+              <h3 class="font-heading text-xl font-semibold text-brandDark">Flexible Staffing Models</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">Choose from permanent, contract, and project-based staffing models designed around your timelines.</p>
+              <div class="hidden-content hidden mt-4 space-y-2 border-t border-amber-200 pt-4">
+                <ul class="space-y-1 text-xs text-slate-600">
+                  <li>• Permanent Hiring Solutions</li>
+                  <li>• Contractual Staffing</li>
+                  <li>• Project-Based Workforce</li>
+                  <li>• Temporary-to-Hire Models</li>
+                  <li>• Executive Search Mandates</li>
+                  <li>• RPO (Recruitment Process Outsourcing)</li>
+                  <li>• High-Volume Bulk Hiring</li>
+                  <li>• Strategic Leadership Hiring</li>
+                  <li>• Flexible Engagement Terms</li>
+                  <li>• On-Demand Staffing Support</li>
+                </ul>
+              </div>
+              <button onclick="toggleService(this)" class="mt-4 inline-flex items-center text-xs font-bold uppercase tracking-wider text-brandCta hover:text-brandDark">
+                <span>View More</span>
+                <svg class="ml-1 h-3 w-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+            </article>
+
+            <article class="rounded-2xl border border-amber-100 bg-amber-50 p-6">
+              <h3 class="font-heading text-xl font-semibold text-brandDark">End-to-End Hiring Support</h3>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600">From requirement discovery to onboarding, we stay accountable through each stage of the hiring cycle.</p>
+              <div class="hidden-content hidden mt-4 space-y-2 border-t border-amber-200 pt-4">
+                <ul class="space-y-1 text-xs text-slate-600">
+                  <li>• Requirement Discovery</li>
+                  <li>• Profile Sourcing & Mapping</li>
+                  <li>• Initial Candidate Screening</li>
+                  <li>• Interview Coordination</li>
+                  <li>• Feedback Management</li>
+                  <li>• Offer Negotiation Support</li>
+                  <li>• Background Check Support</li>
+                  <li>• Onboarding Coordination</li>
+                  <li>• Post-Joining Follow-ups</li>
+                  <li>• Full Lifecycle Accountability</li>
+                </ul>
+              </div>
+              <button onclick="toggleService(this)" class="mt-4 inline-flex items-center text-xs font-bold uppercase tracking-wider text-brandCta hover:text-brandDark">
+                <span>View More</span>
+                <svg class="ml-1 h-3 w-3 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+            </article>
           </div>
         </div>
       </section>
 
-      <section data-aos="fade-up" class="section-bg-testimonials py-16 sm:py-20">
+      <section data-aos="fade-up" class="bg-white py-16 sm:py-20">
         <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 class="font-heading text-3xl font-bold text-brandDark">What Clients Say</h2>
+          <h2 class="font-heading text-3xl font-bold text-brandSky">What Clients Say</h2>
           <div class="relative mt-10 overflow-hidden rounded-2xl bg-white p-8 shadow-sm">
             <div id="testimonialSlider" class="transition-all duration-500">
               <blockquote class="testimonial-item"><p class="text-lg leading-relaxed text-slate-700">"SMC PVT LTD helped us close critical positions quickly with high-quality profiles."</p><footer class="mt-4 text-sm font-semibold text-brandCta">HR Lead, TechNova Solutions</footer></blockquote>
@@ -354,14 +804,21 @@
       </section>
     </main>
 
-    <footer class="bg-gradient-to-r from-purple-900 via-violet-800 to-fuchsia-800 py-14 text-purple-100">
+    <footer class="bg-[#800000] py-14 text-white">
       <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
-        <div><h3 class="font-heading text-2xl font-bold text-white">SMC PVT LTD</h3><p class="mt-4 text-sm leading-relaxed">Sourcingia Management Consulting Pvt. Ltd. is your trusted recruitment partner for IT and non-IT talent solutions.</p><a href="#" class="mt-6 inline-block rounded-full border border-purple-100 px-3 py-1 text-xs hover:bg-white hover:text-brandCta">Instagram</a></div>
-        <div><h4 class="font-semibold text-white">Quick Links</h4><ul class="mt-4 space-y-3 text-sm"><li><a class="hover:text-white" href="index.html">Home</a></li><li><a class="hover:text-white" href="about.html">About Us</a></li><li><a class="hover:text-white" href="services.html">Our Services</a></li><li><a class="hover:text-white" href="contact.html">Contact Us</a></li></ul></div>
-        <div><h4 class="font-semibold text-white">Services</h4><ul class="mt-4 space-y-3 text-sm"><li>Real Estate & Construction</li><li>Manufacturing</li><li>Research & Development</li><li>IT Industry</li><li>Retail Industry</li></ul></div>
-        <div><h4 class="font-semibold text-white">Contact Us</h4><ul class="mt-4 space-y-3 text-sm"><li><a class="hover:text-white" href="tel:7996200355">+91 7996200355</a></li><li><a class="hover:text-white break-all" href="mailto:Sourcingiamanagementconsulting@gmail.com">Sourcingiamanagementconsulting@gmail.com</a></li><li><a class="font-semibold text-white hover:text-purple-100" href="https://wa.me/917996200355" target="_blank" rel="noopener noreferrer">Chat with us</a></li></ul></div>
+        <div>
+          <a href="index.html" class="flex items-center gap-4 mb-6">
+            <img src="image-removebg-preview (23).png" alt="SMC Logo" class="h-14 w-auto sm:h-20" />
+            <img src="image-removebg-preview (25).png" alt="SOURCINGIA" class="h-14 w-auto sm:h-24" />
+          </a>
+          <p class="mt-4 text-sm leading-relaxed">Sourcingia Management Consulting Pvt. Ltd. is your trusted recruitment partner for IT and non-IT talent solutions.</p>
+          <a href="#" class="mt-6 inline-block rounded-full border border-purple-100 px-3 py-1 text-xs hover:bg-white hover:text-brandCta">Instagram</a>
+        </div>
+        <div class="lg:pl-12"><h4 class="font-semibold text-brandSky">Quick Links</h4><ul class="mt-4 space-y-3 text-sm"><li><a class="hover:text-white" href="index.html">Home</a></li><li><a class="hover:text-white" href="about.html">About Us</a></li><li><a class="hover:text-white" href="services.html">Our Services</a></li><li><a class="hover:text-white" href="contact.html">Contact Us</a></li></ul></div>
+        <div><h4 class="font-semibold text-brandSky">Services</h4><ul class="mt-4 space-y-3 text-sm"><li>Real Estate & Construction</li><li>Manufacturing</li><li>Research & Development</li><li>IT Industry</li><li>Retail Industry</li></ul></div>
+        <div><h4 class="font-semibold text-brandSky">Contact Us</h4><ul class="mt-4 space-y-3 text-sm"><li><a class="hover:text-white" href="tel:7996200355">+91 7996200355</a></li><li><a class="hover:text-white break-all" href="mailto:Sourcingiamanagementconsulting@gmail.com">Sourcingiamanagementconsulting@gmail.com</a></li><li><a class="font-semibold text-white hover:text-purple-100" href="https://wa.me/917996200355" target="_blank" rel="noopener noreferrer">Chat with us</a></li></ul></div>
       </div>
-      <div class="mx-auto mt-10 max-w-7xl border-t border-purple-300/40 px-4 pt-6 sm:px-6 lg:px-8"><div class="flex flex-col items-start justify-between gap-3 text-xs sm:flex-row sm:items-center"><p>© <span id="year"></span> Sourcingia Management Consulting Pvt. Ltd. All rights reserved.</p><div class="flex gap-5"><a class="hover:text-white" href="#">Terms & Conditions</a><a class="hover:text-white" href="#">Privacy Policy</a><a class="hover:text-white" href="#">Refund Policy</a></div></div></div>
+      <div class="mx-auto mt-10 max-w-7xl border-t border-amber-300/40 px-4 pt-6 sm:px-6 lg:px-8"><div class="flex flex-col items-start justify-between gap-3 text-xs sm:flex-row sm:items-center"><p>© <span id="year"></span> Sourcingia Management Consulting Pvt. Ltd. All rights reserved.</p><div class="flex gap-5"><a class="hover:text-white" href="#">Terms & Conditions</a><a class="hover:text-white" href="#">Privacy Policy</a><a class="hover:text-white" href="#">Refund Policy</a></div></div></div>
     </footer>
 
     <div id="floatingFab" class="fab-stack">
