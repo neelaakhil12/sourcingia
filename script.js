@@ -70,20 +70,8 @@ document.querySelectorAll('a').forEach(link => {
     const href = link.getAttribute('href');
     // Only trigger for internal links that aren't anchors or external
     if (href && href.endsWith('.html') && !href.startsWith('http') && !href.startsWith('#')) {
-      e.preventDefault();
-      if (splashScreen) {
-        // Update animation duration for faster navigation
-        const fill = splashScreen.querySelector('.splash-circle-fill');
-        if (fill) fill.style.animationDuration = '1s';
-        
-        splashScreen.style.visibility = "visible";
-        splashScreen.style.opacity = "1";
-        setTimeout(() => {
-          window.location.href = href;
-        }, 1000);
-      } else {
-        window.location.href = href;
-      }
+      // Direct navigation without splash screen for internal pages
+      return;
     }
   });
 });
