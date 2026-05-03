@@ -144,18 +144,19 @@ if (form) {
     const message = String(data.get("message") || "").trim();
 
     const content = `New hiring inquiry from website:%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email)}%0AMessage: ${encodeURIComponent(message)}`;
-    const mailto = `mailto:Sourcingiamanagementconsulting@gmail.com?subject=Hiring%20Inquiry%20from%20Website&body=${content}`;
     const whatsapp = `https://wa.me/917996200355?text=${content}`;
 
     const status = document.getElementById("formStatus");
     if (status) {
-      status.textContent = "Opening your mail client and WhatsApp to complete submission.";
+      status.textContent = "Redirecting to WhatsApp...";
     }
 
-    window.location.href = mailto;
     setTimeout(() => {
       window.open(whatsapp, "_blank", "noopener,noreferrer");
       form.reset();
+      if (status) {
+        status.textContent = "Thank you! Your inquiry has been sent to WhatsApp.";
+      }
     }, 500);
   });
 }
