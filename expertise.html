@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STEM Expertise | SOURCINGIA - wearmingle.in</title>
+    <meta name="description" content="Discover our specialized recruitment expertise in Science, Technology, Engineering, and Mathematics (STEM) projects on wearmingle.in." />
+    <meta name="keywords" content="STEM recruitment, science hiring, technology staffing, engineering recruitment, mathematics talent, Sourcingia expertise, wearmingle.in" />
+    <link rel="canonical" href="https://wearmingle.in/expertise.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brandSky: "#D4AF37",
+              brandLight: "#fffbeb",
+              brandCta: "#800000",
+              brandDark: "#4a0000",
+              cardScience: "#f0fdf4", // Light green
+              cardTech: "#f0f9ff",    // Light blue
+              cardEng: "#fffbeb",     // Light yellow/cream
+              cardMath: "#fff1f2"     // Light rose
+            },
+            fontFamily: {
+              heading: ["Poppins", "sans-serif"],
+              body: ["Open Sans", "sans-serif"]
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      #splash-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background-color: #800000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.5s ease-out, visibility 0.5s;
+      }
+      .splash-circle-container {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .splash-circle-bg {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 4px solid rgba(212, 175, 55, 0.2);
+      }
+      .splash-circle-fill {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 4px solid #D4AF37;
+        clip-path: inset(100% 0 0 0);
+        animation: fillUp 3s linear forwards;
+      }
+      @keyframes fillUp {
+        from { clip-path: inset(100% 0 0 0); }
+        to { clip-path: inset(0 0 0 0); }
+      }
+      .splash-logo {
+        width: 80px;
+        height: auto;
+        z-index: 10;
+        animation: pulse 2s infinite ease-in-out;
+      }
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.05); opacity: 0.8; }
+      }
+      .splash-text {
+        margin-top: 20px;
+        color: #D4AF37;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        font-size: 1rem;
+      }
+      .expertise-card {
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        overflow: hidden;
+        border: 1px solid rgba(0,0,0,0.05);
+      }
+      .expertise-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      }
+      .expertise-card img {
+        transition: transform 0.6s ease;
+      }
+      .expertise-card:hover img {
+        transform: scale(1.05);
+      }
+      .fab-stack {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        z-index: 60;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+      }
+      .fab-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        transition: opacity 0.22s ease, transform 0.22s ease;
+      }
+      .fab-main-btn {
+        width: 52px;
+        height: 52px;
+        border: 0;
+        border-radius: 9999px;
+        background: #b45309;
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.35);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        cursor: pointer;
+      }
+      .fab-main-btn span { width: 4px; height: 4px; border-radius: 9999px; background: #fff; }
+      .fab-action-btn {
+        width: 52px;
+        height: 52px;
+        border-radius: 9999px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.3);
+      }
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 100;
+        inset: 0;
+        background: rgba(0,0,0,0.5);
+        backdrop-filter: blur(4px);
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+      }
+      .modal.active { display: flex; }
+      .modal-content {
+        max-width: 600px;
+        width: 100%;
+        background: white;
+        border-radius: 1.5rem;
+        padding: 2rem;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+      .modal.active .modal-content {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      html {
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
+    </style>
+  </head>
+  <body class="bg-white font-body text-slate-700 overflow-x-hidden">
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+      <div class="splash-circle-container">
+        <div class="splash-circle-bg"></div>
+        <div class="splash-circle-fill"></div>
+        <img src="image-removebg-preview (23).png" alt="Sourcingia Logo" class="splash-logo">
+      </div>
+      <div class="splash-text">SOURCINGIA</div>
+    </div>
+
+    <!-- Navbar -->
+    <header id="navbar" class="fixed inset-x-0 top-0 z-50 bg-[#800000] transition-all duration-300 w-full overflow-hidden">
+      <nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <a href="index.html" class="flex items-center gap-2 sm:gap-4 shrink-0">
+          <img src="image-removebg-preview (23).png" alt="SMC Logo" class="h-10 w-auto sm:h-20" />
+          <img src="image-removebg-preview (25).png" alt="SOURCINGIA" class="h-14 w-auto sm:h-24" />
+        </a>
+        <button id="menuToggle" class="md:hidden ml-auto inline-flex shrink-0 rounded-md border border-amber-500 p-2 text-white" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+        <ul id="menu" class="hidden gap-8 text-sm font-semibold text-white md:flex">
+          <li><a class="hover:text-purple-100" href="index.html">Home</a></li>
+          <li><a class="hover:text-purple-100" href="about.html">About</a></li>
+          <li><a class="text-purple-100" href="expertise.html">Expertise</a></li>
+          <li><a class="hover:text-purple-100" href="submit-cv.html">Submit CV</a></li>
+          <li><a class="hover:text-purple-100" href="services.html">Services</a></li>
+          <li><a class="hover:text-purple-100" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div id="mobileMenu" class="mx-4 hidden rounded-xl bg-white p-4 shadow-lg">
+        <a class="block py-2 font-semibold text-brandDark" href="index.html">Home</a>
+        <a class="block py-2 font-semibold text-brandDark" href="about.html">About</a>
+        <a class="block py-2 font-semibold text-brandDark" href="expertise.html">Expertise</a>
+        <a class="block py-2 font-semibold text-brandDark" href="submit-cv.html">Submit CV</a>
+        <a class="block py-2 font-semibold text-brandDark" href="services.html">Services</a>
+        <a class="block py-2 font-semibold text-brandDark" href="contact.html">Contact</a>
+      </div>
+    </header>
+
+    <main class="pt-28 sm:pt-32">
+      <!-- Hero Section -->
+      <section data-aos="fade-up" class="bg-white py-12">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl">
+            <h1 class="font-heading text-4xl font-extrabold text-brandDark sm:text-5xl lg:text-6xl">
+              Our Core <span class="text-brandSky">Expertise</span>
+            </h1>
+            <p class="mt-6 text-lg leading-relaxed text-slate-600">
+              Sourcingia specialized in building high-impact teams across Science, Technology, Engineering, and Mathematics (STEM) domains. We understand the complexity of these roles and deliver talent that drives innovation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Expertise Cards Section -->
+      <section class="py-12 bg-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid gap-8 md:grid-cols-2">
+            
+            <!-- Science Card -->
+            <a href="science-expertise.html" data-aos="fade-right" class="expertise-card group relative flex flex-col justify-between rounded-3xl bg-cardScience p-8 sm:p-10 lg:flex-row">
+              <div class="z-10 max-w-md">
+                <h2 class="font-heading text-3xl font-bold text-brandDark sm:text-4xl">Science - <span class="text-green-700">Fueling Discovery And Research</span></h2>
+                <div class="mt-8">
+                  <div class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-green-700 group-hover:gap-4 transition-all">
+                    Know More
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-8 flex justify-end lg:mt-0">
+                <img src="expertise-science.png" alt="Science Expertise" class="h-64 w-auto max-w-full object-contain sm:h-80" />
+              </div>
+              <!-- Decorative Icons -->
+              <div class="absolute right-10 top-10 opacity-10">
+                <svg class="h-20 w-20 text-green-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><path d="M11 7h2v6h-2zm0 8h2v2h-2z"/></svg>
+              </div>
+            </a>
+
+            <!-- Technology Card -->
+            <a href="technology-expertise.html" data-aos="fade-left" class="expertise-card group relative flex flex-col justify-between rounded-3xl bg-cardTech p-8 sm:p-10 lg:flex-row">
+              <div class="z-10 max-w-md">
+                <h2 class="font-heading text-3xl font-bold text-brandDark sm:text-4xl">Technology - <span class="text-blue-700">Innovating For The Digital Age</span></h2>
+                <div class="mt-8">
+                  <div class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-blue-700 group-hover:gap-4 transition-all">
+                    Know More
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-8 flex justify-end lg:mt-0">
+                <img src="expertise-technology.png" alt="Technology Expertise" class="h-64 w-auto max-w-full object-contain sm:h-80" />
+              </div>
+              <div class="absolute right-10 top-10 opacity-10">
+                <svg class="h-20 w-20 text-blue-600" fill="currentColor" viewBox="0 0 24 24"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
+              </div>
+            </a>
+
+            <!-- Engineering Card -->
+            <a href="engineering-expertise.html" data-aos="fade-right" class="expertise-card group relative flex flex-col justify-between rounded-3xl bg-cardEng p-8 sm:p-10 lg:flex-row">
+              <div class="z-10 max-w-md">
+                <h2 class="font-heading text-3xl font-bold text-brandDark sm:text-4xl">Engineering - <span class="text-amber-700">Building The Future, Brick By Brick</span></h2>
+                <div class="mt-8">
+                  <div class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-amber-700 group-hover:gap-4 transition-all">
+                    Know More
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-8 flex justify-end lg:mt-0">
+                <img src="expertise-engineering.png" alt="Engineering Expertise" class="h-64 w-auto max-w-full object-contain sm:h-80" />
+              </div>
+              <div class="absolute right-10 top-10 opacity-10">
+                <svg class="h-20 w-20 text-amber-600" fill="currentColor" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6.3 6.3 9 1.7 4.4C.6 6.8 1 9.8 3 11.8c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.4-.4.4-1.1 0-1.5z"/></svg>
+              </div>
+            </a>
+
+            <!-- Mathematics Card -->
+            <a href="mathematics-expertise.html" data-aos="fade-left" class="expertise-card group relative flex flex-col justify-between rounded-3xl bg-cardMath p-8 sm:p-10 lg:flex-row">
+              <div class="z-10 max-w-md">
+                <h2 class="font-heading text-3xl font-bold text-brandDark sm:text-4xl">Mathematics - <span class="text-red-700">Unlocking Strategic Potential Through Analytics</span></h2>
+                <div class="mt-8">
+                  <div class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-red-700 group-hover:gap-4 transition-all">
+                    Know More
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-8 flex justify-end lg:mt-0">
+                <img src="expertise-mathematics.png" alt="Mathematics Expertise" class="h-64 w-auto max-w-full object-contain sm:h-80" />
+              </div>
+              <div class="absolute right-10 top-10 opacity-10">
+                <svg class="h-20 w-20 text-red-600" fill="currentColor" viewBox="0 0 24 24"><path d="M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/></svg>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section data-aos="fade-up" class="py-20 bg-slate-50">
+        <div class="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 class="font-heading text-3xl font-bold text-brandDark">Ready to hire experts?</h2>
+          <p class="mt-4 text-slate-600">Let our specialized consultants help you find the right talent for your STEM projects.</p>
+          <div class="mt-10 flex flex-wrap justify-center gap-4">
+            <a href="contact.html" class="rounded-full bg-brandCta px-8 py-3 font-bold text-white transition hover:bg-brandDark shadow-lg">Get Started</a>
+            <a href="services.html" class="rounded-full border border-slate-300 px-8 py-3 font-bold text-slate-700 transition hover:bg-white">View All Services</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#800000] py-14 text-white">
+      <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+        <div>
+          <a href="index.html" class="flex items-center gap-4 mb-6">
+            <img src="image-removebg-preview (23).png" alt="SMC Logo" class="h-14 w-auto sm:h-20" />
+            <img src="image-removebg-preview (25).png" alt="SOURCINGIA" class="h-14 w-auto sm:h-24" />
+          </a>
+          <p class="mt-4 text-sm leading-relaxed">Sourcingia Management Consulting Pvt. Ltd. is your trusted recruitment partner for IT and non-IT talent solutions.</p>
+        </div>
+        <div class="lg:pl-12"><h4 class="font-semibold text-brandSky">Quick Links</h4><ul class="mt-4 space-y-3 text-sm"><li><a class="hover:text-white" href="index.html">Home</a></li><li><a class="hover:text-white" href="about.html">About Us</a></li><li><a class="hover:text-white" href="expertise.html">Our Expertise</a></li><li><a class="hover:text-white" href="submit-cv.html">Submit CV</a></li><li><a class="hover:text-white" href="services.html">Our Services</a></li><li><a class="hover:text-white" href="contact.html">Contact Us</a></li></ul></div>
+        <div><h4 class="font-semibold text-brandSky">Services</h4><ul class="mt-4 space-y-3 text-sm"><li>Real Estate & Construction</li><li>Manufacturing</li><li>Research & Development</li><li>IT Industry</li><li>Retail Industry</li></ul></div>
+        <div><h4 class="font-semibold text-brandSky">Contact Us</h4><ul class="mt-4 space-y-3 text-sm"><li><a class="hover:text-white" href="tel:7996200355">+91 7996200355</a></li><li><a class="hover:text-white break-all" href="mailto:Sourcingiamanagementconsulting@gmail.com">Sourcingiamanagementconsulting@gmail.com</a></li></ul></div>
+      </div>
+      <div class="mx-auto mt-10 max-w-7xl border-t border-amber-300/40 px-4 pt-6 sm:px-6 lg:px-8">
+        <p class="text-xs text-center">© <span id="year"></span> Sourcingia Management Consulting Pvt. Ltd. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <div id="floatingFab" class="fab-stack"><div class="fab-actions"><a href="https://wa.me/917996200355" target="_blank" rel="noopener noreferrer" class="fab-action-btn bg-emerald-500" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.5 3.5A10.1 10.1 0 0 0 3.5 17.2L2 22l4.9-1.5A10.1 10.1 0 1 0 20.5 3.5Zm-9.4 18.4h-.1a8.4 8.4 0 0 1-4.3-1.2l-.3-.2-2.5.8.8-2.4-.2-.3a8.4 8.4 0 1 1 6.6 3.3Zm4.8-6.5c-.3-.1-1.6-.8-1.8-.9-.3-.1-.5-.1-.7.3-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.4-2.3-1.3c-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6l.5-.6c.1-.1.2-.3.3-.4s0-.3-.1-.4l-.8-1.9c-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.1 3c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.5.6.1 1.2.1 1.6.1.5 0 1.6-.6 1.8-1.2s.2-1.1.2-1.2-.2-.2-.5-.3Z"/></svg></a><a href="tel:7996200355" class="fab-action-btn bg-brandCta" aria-label="Call now"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none"><path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.1.4 2.3.6 3.6.6.7 0 1.2.6 1.2 1.2V20c0 .7-.6 1.2-1.2 1.2C9.9 21.2 2.8 14.1 2.8 5.2 2.8 4.5 3.3 4 4 4h2.5c.7 0 1.2.6 1.2 1.2 0 1.2.2 2.5.6 3.6.1.4 0 .9-.2 1.2l-2.2 2.2Z"/></svg></a></div><button type="button" class="fab-main-btn" aria-label="Quick contact actions"><span></span><span></span><span></span></button></div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, easing: "ease-out-cubic", once: true });
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Navbar Scroll Effect
+      window.addEventListener('scroll', () => {
+        const nav = document.getElementById('navbar');
+        if (window.scrollY > 50) nav.classList.add('shadow-xl', 'bg-opacity-95');
+        else nav.classList.remove('shadow-xl', 'bg-opacity-95');
+      });
+
+      // Mobile Menu
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+      // Hide Splash Screen
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          document.getElementById('splash-screen').style.opacity = '0';
+          document.getElementById('splash-screen').style.visibility = 'hidden';
+        }, 1500);
+      });
+    </script>
+  </body>
+</html>

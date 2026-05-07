@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | SMC PVT LTD</title>
-    <meta name="description" content="Contact Sourcingia Management Consulting Pvt. Ltd. for your recruitment and staffing needs. Reach us via phone, email, or our inquiry form." />
-    <meta name="keywords" content="contact Sourcingia, recruitment inquiry, staffing contact, Bangalore recruitment agency" />
-    <link rel="canonical" href="https://smcpvtltd.com/contact.html" />
+    <title>Contact Us | SOURCINGIA - wearmingle.in</title>
+    <meta name="description" content="Contact Sourcingia Management Consulting Pvt. Ltd. for your recruitment and staffing needs on wearmingle.in. Reach us via phone, email, or our inquiry form." />
+    <meta name="keywords" content="contact Sourcingia, recruitment inquiry, staffing contact, Bangalore recruitment agency, wearmingle.in" />
+    <link rel="canonical" href="https://wearmingle.in/contact.html" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
@@ -18,7 +18,10 @@
     <style>
       #splash-screen {
         position: fixed;
-        inset: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         z-index: 9999;
         background-color: #800000;
         display: flex;
@@ -29,8 +32,8 @@
       }
       .splash-circle-container {
         position: relative;
-        width: 180px;
-        height: 180px;
+        width: 150px;
+        height: 150px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -54,7 +57,7 @@
         to { clip-path: inset(0 0 0 0); }
       }
       .splash-logo {
-        width: 100px;
+        width: 80px;
         height: auto;
         z-index: 10;
         animation: pulse 2s infinite ease-in-out;
@@ -64,12 +67,12 @@
         50% { transform: scale(1.05); opacity: 0.8; }
       }
       .splash-text {
-        margin-top: 24px;
+        margin-top: 20px;
         color: #D4AF37;
         font-family: 'Poppins', sans-serif;
         font-weight: 600;
         letter-spacing: 0.1em;
-        font-size: 1.2rem;
+        font-size: 1rem;
       }
       .fab-stack {
         position: fixed;
@@ -172,6 +175,10 @@
           display: flex !important;
         }
       }
+      html {
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
     </style>
   </head>
   <body class="bg-white font-body text-slate-700">
@@ -183,18 +190,30 @@
       </div>
       <div class="splash-text">SOURCINGIA</div>
     </div>
-    <header id="navbar" class="fixed inset-x-0 top-0 z-50 bg-[#800000] transition-all duration-300">
+    <header id="navbar" class="fixed inset-x-0 top-0 z-50 bg-[#800000] transition-all duration-300 w-full overflow-hidden">
       <nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <a href="index.html" class="flex items-center gap-2 sm:gap-4">
-          <img src="image-removebg-preview (23).png" alt="SMC Logo" class="h-14 w-auto sm:h-20" />
-          <img src="image-removebg-preview (25).png" alt="SOURCINGIA" class="h-20 w-auto sm:h-24" />
+        <a href="index.html" class="flex items-center gap-2 sm:gap-4 shrink-0">
+          <img src="image-removebg-preview (23).png" alt="SMC Logo" class="h-10 w-auto sm:h-20" />
+          <img src="image-removebg-preview (25).png" alt="SOURCINGIA" class="h-14 w-auto sm:h-24" />
         </a>
-        <button id="menuToggle" class="ml-auto inline-flex shrink-0 rounded-md border border-amber-500 p-2 text-white" aria-label="Open menu"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg></button>
+        <button id="menuToggle" class="md:hidden ml-auto inline-flex shrink-0 rounded-md border border-amber-500 p-2 text-white" aria-label="Open menu"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg></button>
         <ul id="menu" class="hidden gap-8 text-sm font-semibold text-white">
-          <li><a class="hover:text-purple-100" href="index.html">Home</a></li><li><a class="hover:text-purple-100" href="about.html">About</a></li><li><a class="hover:text-purple-100" href="services.html">Services</a></li><li><a class="text-purple-100" href="contact.html">Contact</a></li>
+          <li><a class="hover:text-purple-100" href="index.html">Home</a></li>
+          <li><a class="hover:text-purple-100" href="about.html">About</a></li>
+          <li><a class="hover:text-purple-100" href="expertise.html">Expertise</a></li>
+          <li><a class="hover:text-purple-100" href="submit-cv.html">Submit CV</a></li>
+          <li><a class="hover:text-purple-100" href="services.html">Services</a></li>
+          <li><a class="text-purple-100" href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <div id="mobileMenu" class="mx-4 hidden rounded-xl bg-white p-4 shadow-lg"><a class="block py-2 font-semibold text-brandDark" href="index.html">Home</a><a class="block py-2 font-semibold text-brandDark" href="about.html">About</a><a class="block py-2 font-semibold text-brandDark" href="services.html">Services</a><a class="block py-2 font-semibold text-brandDark" href="contact.html">Contact</a></div>
+      <div id="mobileMenu" class="mx-4 hidden rounded-xl bg-white p-4 shadow-lg">
+        <a class="block py-2 font-semibold text-brandDark" href="index.html">Home</a>
+        <a class="block py-2 font-semibold text-brandDark" href="about.html">About</a>
+        <a class="block py-2 font-semibold text-brandDark" href="expertise.html">Expertise</a>
+        <a class="block py-2 font-semibold text-brandDark" href="submit-cv.html">Submit CV</a>
+        <a class="block py-2 font-semibold text-brandDark" href="services.html">Services</a>
+        <a class="block py-2 font-semibold text-brandDark" href="contact.html">Contact</a>
+      </div>
     </header>
     <main class="pt-28">
       <section data-aos="fade-up" class="bg-white py-16"><div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"><h1 class="font-heading text-4xl font-bold text-brandSky">Let’s Build Your Next Team</h1><p class="mt-4 max-w-3xl text-slate-600">Share your hiring requirement and our consultants will reach out with a tailored staffing solution.</p></div></section>
@@ -213,7 +232,17 @@
           </div>
           <div class="space-y-6">
             <div class="rounded-2xl bg-slate-50 p-8"><h3 class="font-heading text-xl font-bold text-brandSky">Contact Details</h3><p class="mt-4"><span class="font-semibold text-brandDark">Phone:</span> <a class="text-brandCta" href="tel:7996200355">7996200355</a></p><p class="mt-2"><span class="font-semibold text-brandDark">Email:</span> <a class="text-brandCta break-all" href="mailto:Sourcingiamanagementconsulting@gmail.com">Sourcingiamanagementconsulting@gmail.com</a></p><div class="mt-6 flex flex-wrap gap-3"><a href="tel:7996200355" class="rounded-lg bg-brandCta px-5 py-2 text-sm font-semibold text-white">Click-to-Call</a><a href="https://wa.me/917996200355" target="_blank" rel="noopener noreferrer" class="rounded-lg border border-sky-200 px-5 py-2 text-sm font-semibold text-brandDark">WhatsApp</a></div></div>
-            <div class="overflow-hidden rounded-2xl border border-sky-100"><iframe title="Sourcingia Location" class="h-72 w-full" loading="lazy" src="https://maps.google.com/maps?q=Bangalore&t=&z=11&ie=UTF8&iwloc=&output=embed"></iframe></div>
+            <div class="overflow-hidden rounded-2xl border border-sky-100">
+              <iframe title="Sourcingia Location" class="h-72 w-full" loading="lazy" src="https://maps.google.com/maps?q=Bangalore&t=&z=11&ie=UTF8&iwloc=&output=embed"></iframe>
+              <div class="p-4 bg-white text-center border-t border-sky-100">
+                <a href="https://maps.app.goo.gl/DgAKFwcQ6T8sn5W66?g_st=aw" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-brandCta font-semibold hover:underline">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                  </svg>
+                  View on Google Maps
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -225,7 +254,7 @@
           </a>
           <p class="mt-4 text-sm leading-relaxed">Sourcingia Management Consulting Pvt. Ltd. is your trusted recruitment partner for IT and non-IT talent solutions.</p>
           <a href="#" class="mt-6 inline-block rounded-full border border-purple-100 px-3 py-1 text-xs hover:bg-white hover:text-brandCta">Instagram</a>
-        </div>        <div class="lg:pl-12"><h4 class="font-semibold text-brandSky">Quick Links</h4><ul class="mt-4 space-y-3 text-sm"><li><a class="hover:text-white" href="index.html">Home</a></li><li><a class="hover:text-white" href="about.html">About Us</a></li><li><a class="hover:text-white" href="services.html">Our Services</a></li><li><a class="hover:text-white" href="contact.html">Contact Us</a></li></ul></div><div><h4 class="font-semibold text-brandSky">Services</h4><ul class="mt-4 space-y-3 text-sm"><li>Real Estate & Construction</li><li>Manufacturing</li><li>Research & Development</li><li>IT Industry</li><li>Retail Industry</li></ul></div><div><h4 class="font-semibold text-brandSky">Contact Us</h4><ul class="mt-4 space-y-3 text-sm"><li><a class="hover:text-white" href="tel:7996200355">+91 7996200355</a></li><li><a class="hover:text-white break-all" href="mailto:Sourcingiamanagementconsulting@gmail.com">Sourcingiamanagementconsulting@gmail.com</a></li><li><a class="font-semibold text-white hover:text-purple-100" href="https://wa.me/917996200355" target="_blank" rel="noopener noreferrer">Chat with us</a></li></ul></div></div><div class="mx-auto mt-10 max-w-7xl border-t border-amber-300/40 px-4 pt-6 sm:px-6 lg:px-8"><div class="flex flex-col items-start justify-between gap-3 text-xs sm:flex-row sm:items-center"><p>© <span id="year"></span> Sourcingia Management Consulting Pvt. Ltd. All rights reserved.</p><div class="flex gap-5"><a class="hover:text-white" href="#">Terms & Conditions</a><a class="hover:text-white" href="#">Privacy Policy</a><a class="hover:text-white" href="#">Refund Policy</a></div></div></div></footer>
+        </div>        <div class="lg:pl-12"><h4 class="font-semibold text-brandSky">Quick Links</h4><ul class="mt-4 space-y-3 text-sm"><li><a class="hover:text-white" href="index.html">Home</a></li><li><a class="hover:text-white" href="about.html">About Us</a></li><li><a class="hover:text-white" href="expertise.html">Our Expertise</a></li><li><a class="hover:text-white" href="submit-cv.html">Submit CV</a></li><li><a class="hover:text-white" href="services.html">Our Services</a></li><li><a class="hover:text-white" href="contact.html">Contact Us</a></li></ul></div><div><h4 class="font-semibold text-brandSky">Services</h4><ul class="mt-4 space-y-3 text-sm"><li>Real Estate & Construction</li><li>Manufacturing</li><li>Research & Development</li><li>IT Industry</li><li>Retail Industry</li></ul></div><div><h4 class="font-semibold text-brandSky">Contact Us</h4><ul class="mt-4 space-y-3 text-sm"><li><a class="hover:text-white" href="tel:7996200355">+91 7996200355</a></li><li><a class="hover:text-white break-all" href="mailto:Sourcingiamanagementconsulting@gmail.com">Sourcingiamanagementconsulting@gmail.com</a></li><li><a class="font-semibold text-white hover:text-purple-100" href="https://wa.me/917996200355" target="_blank" rel="noopener noreferrer">Chat with us</a></li></ul></div></div><div class="mx-auto mt-10 max-w-7xl border-t border-amber-300/40 px-4 pt-6 sm:px-6 lg:px-8"><div class="flex flex-col items-start justify-between gap-3 text-xs sm:flex-row sm:items-center"><p>© <span id="year"></span> Sourcingia Management Consulting Pvt. Ltd. All rights reserved.</p><div class="flex gap-5"><a class="hover:text-white" href="#">Terms & Conditions</a><a class="hover:text-white" href="#">Privacy Policy</a><a class="hover:text-white" href="#">Refund Policy</a></div></div></div></footer>
     <div id="floatingFab" class="fab-stack"><div class="fab-actions"><a href="https://wa.me/917996200355" target="_blank" rel="noopener noreferrer" class="fab-action-btn bg-emerald-500" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M20.5 3.5A10.1 10.1 0 0 0 3.5 17.2L2 22l4.9-1.5A10.1 10.1 0 1 0 20.5 3.5Zm-9.4 18.4h-.1a8.4 8.4 0 0 1-4.3-1.2l-.3-.2-2.5.8.8-2.4-.2-.3a8.4 8.4 0 1 1 6.6 3.3Zm4.8-6.5c-.3-.1-1.6-.8-1.8-.9-.3-.1-.5-.1-.7.3-.2.3-.8 1-.9 1.1-.2.2-.3.2-.6.1s-1.2-.4-2.3-1.3c-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6l.5-.6c.1-.1.2-.3.3-.4s0-.3-.1-.4l-.8-1.9c-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.8.4s-1 1-1 2.4 1 2.8 1.1 3c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.5.6.1 1.2.1 1.6.1.5 0 1.6-.6 1.8-1.2s.2-1.1.2-1.2-.2-.2-.5-.3Z"/></svg></a><a href="tel:7996200355" class="fab-action-btn bg-brandCta" aria-label="Call now"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none"><path stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.2 1.1.4 2.3.6 3.6.6.7 0 1.2.6 1.2 1.2V20c0 .7-.6 1.2-1.2 1.2C9.9 21.2 2.8 14.1 2.8 5.2 2.8 4.5 3.3 4 4 4h2.5c.7 0 1.2.6 1.2 1.2 0 1.2.2 2.5.6 3.6.1.4 0 .9-.2 1.2l-2.2 2.2Z"/></svg></a></div><button type="button" class="fab-main-btn" aria-label="Quick contact actions"><span></span><span></span><span></span></button></div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>

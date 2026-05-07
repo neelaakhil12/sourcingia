@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client Onboarding | SOURCINGIA - wearmingle.in</title>
+    <meta name="description" content="Partner with Sourcingia Management Consulting. Complete our client onboarding form to start your hiring journey for top STEM talent." />
+    <link rel="canonical" href="https://wearmingle.in/client-onboarding.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      :root {
+        --maroon:    #800000;
+        --maroon-dk: #5a0000;
+        --gold:      #D4AF37;
+        --text-dark: #1a1a2e;
+        --text-mid:  #2d2d44;
+        --text-muted:#6b7280;
+        --border:    #c8c8d8;
+        --bg-page:   #f4f4f8;
+        --bg-form:   #ffffff;
+        --radius:    8px;
+        --shadow:    0 4px 24px rgba(0,0,0,0.10);
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background: var(--bg-page);
+        color: var(--text-dark);
+        overflow-x: hidden;
+      }
+
+      /* ── NAVBAR ── */
+      header {
+        position: fixed;
+        inset: 0 0 auto 0;
+        z-index: 50;
+        background: var(--maroon);
+        box-shadow: 0 2px 16px rgba(0,0,0,0.25);
+      }
+      nav {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 24px;
+      }
+      .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+      .nav-logo img { height: 60px; width: auto; }
+      .nav-links { display: flex; gap: 32px; list-style: none; }
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+      #menuToggle {
+        display: none;
+        background: none;
+        border: 1.5px solid var(--gold);
+        color: #fff;
+        padding: 6px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-left: auto;
+        font-size: 18px;
+      }
+      #mobileMenu {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        padding: 16px 24px;
+        gap: 4px;
+      }
+      #mobileMenu a {
+        display: block;
+        padding: 10px 0;
+        font-weight: 600;
+        color: var(--maroon);
+        text-decoration: none;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 15px;
+      }
+      #mobileMenu.open { display: flex; }
+      @media (max-width: 768px) {
+        .nav-links { display: none; }
+        #menuToggle { display: block; }
+      }
+
+      /* ── HERO ── */
+      .page-hero {
+        background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-dk) 100%);
+        padding: 140px 24px 64px;
+        text-align: center;
+      }
+      .page-hero .badge {
+        display: inline-block;
+        background: rgba(212,175,55,0.18);
+        border: 1px solid rgba(212,175,55,0.45);
+        color: var(--gold);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        padding: 6px 18px;
+        border-radius: 50px;
+        margin-bottom: 20px;
+      }
+      .page-hero h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 800;
+        color: #fff;
+        line-height: 1.2;
+      }
+      .page-hero h1 span { color: var(--gold); }
+      .page-hero p {
+        margin-top: 16px;
+        color: rgba(255,255,255,0.82);
+        font-size: 16px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.7;
+      }
+
+      /* ── TRUST STRIP ── */
+      .trust-strip {
+        background: #fff;
+        border-bottom: 1px solid #eaeaf0;
+        padding: 18px 24px;
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+      .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-mid);
+      }
+      .trust-item svg { color: var(--maroon); flex-shrink: 0; }
+
+      /* ── FORM SECTION ── */
+      .form-section {
+        padding: 52px 24px 80px;
+        max-width: 860px;
+        margin: 0 auto;
+      }
+
+      .form-card {
+        background: var(--bg-form);
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+        border: 1px solid #e2e2ec;
+        overflow: hidden;
+      }
+
+      .form-card-header {
+        background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-dk) 100%);
+        padding: 28px 40px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .form-card-header svg { color: var(--gold); flex-shrink: 0; }
+      .form-card-header h2 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+      }
+      .form-card-header p { font-size: 13px; color: rgba(255,255,255,0.72); margin-top: 2px; }
+
+      .form-body { padding: 40px 40px 48px; }
+      @media (max-width: 600px) {
+        .form-card-header { padding: 22px 20px; }
+        .form-body { padding: 28px 18px 36px; }
+      }
+
+      /* ── SECTION LABEL ── */
+      .section-label {
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        color: var(--maroon);
+        border-left: 3px solid var(--gold);
+        padding-left: 10px;
+        margin-bottom: 20px;
+        margin-top: 36px;
+      }
+      .section-label:first-of-type { margin-top: 0; }
+
+      /* ── GRID ── */
+      .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+      .form-grid.single { grid-template-columns: 1fr; }
+      @media (max-width: 580px) { .form-grid { grid-template-columns: 1fr; } }
+
+      /* ── FIELDS ── */
+      .field { display: flex; flex-direction: column; gap: 7px; margin-top: 0; }
+      .field + .field { margin-top: 0; }
+
+      label {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--text-dark);
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+      }
+      label .req { color: #c0392b; margin-left: 2px; }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="url"],
+      input[type="number"],
+      textarea {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1.8px solid var(--border);
+        border-radius: var(--radius);
+        font-size: 15px;
+        font-family: 'Inter', sans-serif;
+        color: var(--text-dark);
+        background: #fafafa;
+        outline: none;
+        transition: border-color 0.22s, box-shadow 0.22s, background 0.22s;
+      }
+      input::placeholder, textarea::placeholder { color: #b0b0be; font-size: 14px; }
+      input:focus, textarea:focus {
+        border-color: var(--maroon);
+        background: #fff;
+        box-shadow: 0 0 0 3px rgba(128,0,0,0.09);
+      }
+
+      /* CTC range row */
+      .ctc-row {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        gap: 10px;
+        align-items: end;
+      }
+      .ctc-sep {
+        font-weight: 700;
+        color: var(--text-muted);
+        padding-bottom: 13px;
+        text-align: center;
+        font-size: 15px;
+      }
+
+      hr.sep {
+        border: none;
+        border-top: 1.5px solid #eaeaf0;
+        margin: 32px 0 28px;
+      }
+
+      /* ── SUBMIT BUTTON ── */
+      .btn-submit {
+        display: block;
+        width: 100%;
+        padding: 16px;
+        background: linear-gradient(135deg, var(--maroon) 0%, var(--maroon-dk) 100%);
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+        letter-spacing: 0.5px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 36px;
+        transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+        box-shadow: 0 4px 18px rgba(128,0,0,0.32);
+      }
+      .btn-submit:hover { opacity: 0.93; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(128,0,0,0.40); }
+      .btn-submit:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+
+      #formStatus {
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 14px;
+        min-height: 22px;
+      }
+
+      /* ── FOOTER ── */
+      footer { background: var(--maroon); color: #fff; padding: 56px 24px 0; }
+      .footer-grid {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        padding-bottom: 40px;
+      }
+      .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+      .footer-logo img { height: 52px; width: auto; }
+      footer p { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.78); }
+      footer h4 { font-size: 14px; font-weight: 700; color: var(--gold); margin-bottom: 16px; }
+      footer ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+      footer ul a { color: rgba(255,255,255,0.78); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+      footer ul a:hover { color: #fff; }
+      .footer-bottom {
+        border-top: 1px solid rgba(212,175,55,0.3);
+        text-align: center;
+        padding: 18px 24px;
+        font-size: 12px;
+        color: rgba(255,255,255,0.6);
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <header>
+      <nav>
+        <a href="index.html" class="nav-logo">
+          <img src="image-removebg-preview (23).png" alt="SMC Logo" />
+          <img src="image-removebg-preview (25).png" alt="SOURCINGIA" />
+        </a>
+        <button id="menuToggle" aria-label="Open menu">&#9776;</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="expertise.html">Expertise</a></li>
+          <li><a href="submit-cv.html">Submit CV</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="client-onboarding.html" class="active">Client Onboarding</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="expertise.html">Expertise</a>
+        <a href="submit-cv.html">Submit CV</a>
+        <a href="services.html">Services</a>
+        <a href="client-onboarding.html">Client Onboarding</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero">
+      <div class="badge">Partner With Us</div>
+      <h1>Client <span>Onboarding</span> Form</h1>
+      <p>Tell us about your hiring needs and we'll connect you with exceptional STEM talent tailored to your organization.</p>
+    </section>
+
+    <!-- Trust Strip -->
+    <div class="trust-strip">
+      <div class="trust-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        Dedicated Account Manager
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        100% Confidential
+      </div>
+      <div class="trust-item">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+        Fast Response Within 24 hrs
+      </div>
+    </div>
+
+    <!-- Form -->
+    <main class="form-section" data-aos="fade-up">
+      <div class="form-card">
+
+        <div class="form-card-header">
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          <div>
+            <h2>Client Onboarding Form</h2>
+            <p>Fill in your details below — our team will reach out within 24 hours.</p>
+          </div>
+        </div>
+
+        <div class="form-body">
+          <form id="onboardForm" novalidate>
+
+            <!-- Section: Contact Person -->
+            <div class="section-label">Contact Person</div>
+            <div class="form-grid">
+              <div class="field">
+                <label for="firstName">First Name <span class="req">*</span></label>
+                <input type="text" id="firstName" name="firstName" required placeholder="e.g. Rajesh" />
+              </div>
+              <div class="field">
+                <label for="lastName">Last Name <span class="req">*</span></label>
+                <input type="text" id="lastName" name="lastName" required placeholder="e.g. Sharma" />
+              </div>
+            </div>
+
+            <div class="form-grid single" style="margin-top:22px">
+              <div class="field">
+                <label for="email">Email ID <span class="req">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="rajesh@company.com" />
+              </div>
+            </div>
+
+            <hr class="sep" />
+
+            <!-- Section: Company Details -->
+            <div class="section-label">Company Details</div>
+            <div class="form-grid">
+              <div class="field">
+                <label for="businessName">Business Name <span class="req">*</span></label>
+                <input type="text" id="businessName" name="businessName" required placeholder="e.g. Acme Technologies Pvt. Ltd." />
+              </div>
+              <div class="field">
+                <label for="websiteName">Company Website Name <span class="req">*</span></label>
+                <input type="text" id="websiteName" name="websiteName" required placeholder="e.g. Acme Technologies" />
+              </div>
+            </div>
+
+            <div class="form-grid single" style="margin-top:22px">
+              <div class="field">
+                <label for="websiteUrl">Company Website URL</label>
+                <input type="url" id="websiteUrl" name="websiteUrl" placeholder="https://www.yourcompany.com" />
+              </div>
+            </div>
+
+            <hr class="sep" />
+
+            <!-- Section: Hiring Requirements -->
+            <div class="section-label">Hiring Requirements</div>
+            <div class="form-grid">
+              <div class="field">
+                <label for="openPosition">Open Position <span class="req">*</span></label>
+                <input type="text" id="openPosition" name="openPosition" required placeholder="e.g. Senior Data Engineer" />
+              </div>
+              <div class="field">
+                <label for="hiringLocation">Hiring Location <span class="req">*</span></label>
+                <input type="text" id="hiringLocation" name="hiringLocation" required placeholder="e.g. Bangalore / Remote" />
+              </div>
+            </div>
+
+            <!-- CTC Range -->
+            <div style="margin-top:22px">
+              <label style="display:block;margin-bottom:10px">CTC Range (Per Annum) <span class="req">*</span></label>
+              <div class="ctc-row">
+                <div class="field">
+                  <label for="minCTC" style="font-size:11px;color:var(--text-muted)">Minimum CTC</label>
+                  <input type="text" id="minCTC" name="minCTC" required placeholder="e.g. 8 LPA" />
+                </div>
+                <div class="ctc-sep">—</div>
+                <div class="field">
+                  <label for="maxCTC" style="font-size:11px;color:var(--text-muted)">Maximum CTC</label>
+                  <input type="text" id="maxCTC" name="maxCTC" required placeholder="e.g. 18 LPA" />
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit" id="submitBtn">Submit &amp; Connect on WhatsApp →</button>
+            <p id="formStatus"></p>
+
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="image-removebg-preview (23).png" alt="SMC Logo" />
+            <img src="image-removebg-preview (25).png" alt="SOURCINGIA" />
+          </div>
+          <p>Sourcingia Management Consulting Pvt. Ltd. — your trusted recruitment partner for IT and non-IT talent solutions across India.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="expertise.html">Our Expertise</a></li>
+            <li><a href="submit-cv.html">Submit CV</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li>Real Estate &amp; Construction</li>
+            <li>Manufacturing</li>
+            <li>Research &amp; Development</li>
+            <li>IT Industry</li>
+            <li>Retail Industry</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="tel:7996200355">+91 7996200355</a></li>
+            <li><a href="mailto:Sourcingiamanagementconsulting@gmail.com" style="word-break:break-all">Sourcingiamanagementconsulting@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year"></span> Sourcingia Management Consulting Pvt. Ltd. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true });
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Mobile menu
+      document.getElementById('menuToggle').addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.toggle('open');
+      });
+
+      // Form submit → WhatsApp
+      document.getElementById('onboardForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const status = document.getElementById('formStatus');
+        const btn    = document.getElementById('submitBtn');
+        const data   = new FormData(this);
+
+        const firstName   = data.get('firstName')    || '';
+        const lastName    = data.get('lastName')     || '';
+        const email       = data.get('email')        || '';
+        const business    = data.get('businessName') || '';
+        const position    = data.get('openPosition') || '';
+        const minCTC      = data.get('minCTC')       || 'N/A';
+        const maxCTC      = data.get('maxCTC')       || 'N/A';
+        const webName     = data.get('websiteName')  || 'N/A';
+        const webUrl      = data.get('websiteUrl')   || 'N/A';
+        const location    = data.get('hiringLocation')|| '';
+
+        btn.disabled = true;
+        btn.textContent = 'Opening WhatsApp…';
+        status.style.color = '#2563eb';
+        status.textContent = 'Preparing your submission…';
+
+        const msg =
+          `🏢 New Client Onboarding - Sourcingia%0A%0A` +
+          `👤 Name: ${encodeURIComponent(firstName + ' ' + lastName)}%0A` +
+          `📧 Email: ${encodeURIComponent(email)}%0A%0A` +
+          `🏬 Business: ${encodeURIComponent(business)}%0A` +
+          `🌐 Website: ${encodeURIComponent(webName)} — ${encodeURIComponent(webUrl)}%0A%0A` +
+          `💼 Open Position: ${encodeURIComponent(position)}%0A` +
+          `📍 Hiring Location: ${encodeURIComponent(location)}%0A` +
+          `💰 CTC Range: ${encodeURIComponent(minCTC)} to ${encodeURIComponent(maxCTC)}%0A%0A` +
+          `Submitted via Sourcingia website.`;
+
+        setTimeout(() => {
+          window.open(`https://wa.me/917996200355?text=${msg}`, '_blank');
+          this.reset();
+          btn.disabled = false;
+          btn.textContent = 'Submit & Connect on WhatsApp →';
+          status.style.color = '#16a34a';
+          status.textContent = '✔ Details sent! Our team will get back to you within 24 hours.';
+        }, 700);
+      });
+    </script>
+  </body>
+</html>

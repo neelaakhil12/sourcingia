@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submit Your CV | SOURCINGIA - wearmingle.in</title>
+    <meta name="description" content="Submit your CV to Sourcingia Management Consulting on wearmingle.in. Join our talent pool for Science, Technology, Engineering, and Mathematics roles." />
+    <meta name="keywords" content="submit cv, careers, STEM jobs, recruitment India, wearmingle.in" />
+    <link rel="canonical" href="https://wearmingle.in/submit-cv.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      :root {
+        --maroon: #800000;
+        --maroon-dark: #5a0000;
+        --gold: #D4AF37;
+        --text-dark: #1a1a2e;
+        --text-mid: #2d2d44;
+        --text-muted: #6b7280;
+        --border: #c8c8d8;
+        --bg-page: #f4f4f8;
+        --bg-form: #ffffff;
+        --radius: 8px;
+        --shadow: 0 4px 24px rgba(0,0,0,0.10);
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background: var(--bg-page);
+        color: var(--text-dark);
+      }
+      html {
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
+
+      /* ── NAVBAR ── */
+      header {
+        position: fixed;
+        inset: 0 0 auto 0;
+        z-index: 50;
+        background: var(--maroon);
+        box-shadow: 0 2px 16px rgba(0,0,0,0.25);
+      }
+      nav {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 24px;
+      }
+      .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+      .nav-logo img { height: 60px; width: auto; }
+      .nav-links { display: flex; gap: 32px; list-style: none; }
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+      #menuToggle {
+        display: none;
+        background: none;
+        border: 1.5px solid var(--gold);
+        color: #fff;
+        padding: 6px 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-left: auto;
+      }
+      #mobileMenu {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        padding: 16px 24px;
+        gap: 4px;
+      }
+      #mobileMenu a {
+        display: block;
+        padding: 10px 0;
+        font-weight: 600;
+        color: var(--maroon);
+        text-decoration: none;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 15px;
+      }
+      @media (max-width: 768px) {
+        .nav-links { display: none; }
+        #menuToggle { display: block; }
+        #mobileMenu.open { display: flex; }
+        .nav-logo img { height: 45px; }
+      }
+
+      /* ── HERO BANNER ── */
+      .page-hero {
+        background: linear-gradient(135deg, var(--maroon) 0%, #5a0000 100%);
+        padding: 140px 24px 60px;
+        text-align: center;
+      }
+      .page-hero h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 800;
+        color: #fff;
+        line-height: 1.2;
+      }
+      .page-hero h1 span { color: var(--gold); }
+      .page-hero p {
+        margin-top: 16px;
+        color: rgba(255,255,255,0.82);
+        font-size: 16px;
+        max-width: 580px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.7;
+      }
+
+      /* ── FORM SECTION ── */
+      .form-section {
+        padding: 56px 24px 80px;
+        max-width: 820px;
+        margin: 0 auto;
+      }
+
+      .form-card {
+        background: var(--bg-form);
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+        padding: 48px 40px;
+        border: 1px solid #e2e2ec;
+      }
+
+      .form-card-title {
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--maroon);
+        margin-bottom: 32px;
+        padding-bottom: 16px;
+        border-bottom: 2px solid var(--gold);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .form-card-title svg { flex-shrink: 0; }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+      .form-grid.single { grid-template-columns: 1fr; }
+
+      @media (max-width: 620px) {
+        .form-card { padding: 28px 18px; }
+        .form-grid { grid-template-columns: 1fr; }
+      }
+
+      .field { display: flex; flex-direction: column; gap: 7px; }
+
+      label {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--text-dark);
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+      }
+      label .req { color: #c0392b; margin-left: 2px; }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="number"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 12px 16px;
+        border: 1.8px solid var(--border);
+        border-radius: var(--radius);
+        font-size: 15px;
+        font-family: 'Inter', sans-serif;
+        color: var(--text-dark);
+        background: #fafafa;
+        outline: none;
+        transition: border-color 0.22s, box-shadow 0.22s, background 0.22s;
+        -webkit-appearance: none;
+      }
+      input::placeholder, textarea::placeholder { color: #b0b0be; font-size: 14px; }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: var(--maroon);
+        background: #fff;
+        box-shadow: 0 0 0 3px rgba(128,0,0,0.10);
+      }
+      select { cursor: pointer; color: var(--text-dark); }
+      select option[value=""] { color: #b0b0be; }
+      textarea { resize: vertical; min-height: 110px; }
+
+      .section-sep {
+        border: none;
+        border-top: 1.5px solid #eaeaf0;
+        margin: 32px 0 28px;
+      }
+
+      /* ── UPLOAD BOX ── */
+      .upload-area {
+        border: 2px dashed var(--border);
+        border-radius: var(--radius);
+        background: #f8f8fc;
+        padding: 32px 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: border-color 0.2s, background 0.2s;
+        position: relative;
+      }
+      .upload-area:hover { border-color: var(--maroon); background: #fff6f6; }
+      .upload-area input { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+      .upload-icon { color: #aaa; margin-bottom: 10px; }
+      .upload-area p { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+      .upload-area strong { color: var(--maroon); font-weight: 700; }
+      #fileName { font-size: 13px; color: #2d6a4f; font-weight: 600; margin-top: 8px; }
+
+      /* ── SUBMIT BUTTON ── */
+      .btn-submit {
+        display: block;
+        width: 100%;
+        padding: 16px;
+        background: linear-gradient(135deg, var(--maroon) 0%, #5a0000 100%);
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+        letter-spacing: 0.5px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 32px;
+        transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+        box-shadow: 0 4px 18px rgba(128,0,0,0.35);
+      }
+      .btn-submit:hover { opacity: 0.93; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(128,0,0,0.40); }
+      .btn-submit:active { transform: translateY(0); }
+
+      #formStatus {
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 14px;
+        min-height: 22px;
+      }
+
+      /* LinkedIn hint box */
+      .linkedin-hint {
+        margin-top: 12px;
+        background: #f0f4ff;
+        border: 1.5px solid #c7d7f9;
+        border-radius: 8px;
+        padding: 14px 18px;
+      }
+      .hint-title {
+        font-size: 13px;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 4px;
+      }
+      .hint-sub {
+        font-size: 12.5px;
+        color: var(--text-muted);
+        font-style: italic;
+        margin-bottom: 10px;
+      }
+      .linkedin-hint ol {
+        padding-left: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .linkedin-hint ol li {
+        font-size: 12.5px;
+        color: var(--text-mid);
+        font-style: italic;
+        line-height: 1.55;
+      }
+      .linkedin-hint ol li a {
+        color: #0a66c2;
+        text-decoration: underline;
+        word-break: break-all;
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--maroon);
+        color: #fff;
+        padding: 56px 24px 0;
+      }
+      .footer-grid {
+        max-width: 1280px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 40px;
+        padding-bottom: 40px;
+      }
+      .footer-logo { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+      .footer-logo img { height: 52px; width: auto; }
+      footer p { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,0.78); }
+      footer h4 { font-size: 14px; font-weight: 700; color: var(--gold); margin-bottom: 16px; }
+      footer ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+      footer ul a { color: rgba(255,255,255,0.78); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+      footer ul a:hover { color: #fff; }
+      .footer-bottom {
+        border-top: 1px solid rgba(212,175,55,0.3);
+        text-align: center;
+        padding: 18px 24px;
+        font-size: 12px;
+        color: rgba(255,255,255,0.6);
+        max-width: 1280px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <header>
+      <nav>
+        <a href="index.html" class="nav-logo">
+          <img src="image-removebg-preview (23).png" alt="SMC Logo" />
+          <img src="image-removebg-preview (25).png" alt="SOURCINGIA" />
+        </a>
+        <button id="menuToggle" aria-label="Open menu">&#9776;</button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="expertise.html">Expertise</a></li>
+          <li><a href="submit-cv.html" class="active">Submit CV</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="expertise.html">Expertise</a>
+        <a href="submit-cv.html">Submit CV</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero">
+      <h1>Submit Your <span>CV</span></h1>
+      <p>Take the next step in your career. Share your professional profile and let our experts connect you with the right STEM opportunities.</p>
+    </section>
+
+    <!-- Form -->
+    <main class="form-section" data-aos="fade-up">
+      <div class="form-card">
+        <div class="form-card-title">
+          <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          Personal Information
+        </div>
+
+        <form id="cvForm" novalidate>
+          <!-- Row 1 -->
+          <div class="form-grid">
+            <div class="field">
+              <label for="fullName">Full Name <span class="req">*</span></label>
+              <input type="text" id="fullName" name="fullName" required placeholder="e.g. Rahul Sharma" />
+            </div>
+            <div class="field">
+              <label for="email">Email Address <span class="req">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="rahul@example.com" />
+            </div>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="form-grid" style="margin-top:24px">
+            <div class="field">
+              <label for="phone">Mobile Number <span class="req">*</span></label>
+              <input type="tel" id="phone" name="phone" required placeholder="+91 98765 43210" />
+            </div>
+            <div class="field">
+              <label for="currentLocation">Current Location <span class="req">*</span></label>
+              <input type="text" id="currentLocation" name="currentLocation" required placeholder="City, State" />
+            </div>
+          </div>
+
+          <hr class="section-sep" />
+          <div class="form-card-title" style="border-bottom:none;margin-bottom:24px;padding-bottom:0">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+            Professional Details
+          </div>
+
+          <!-- Row 3 -->
+          <div class="form-grid">
+            <div class="field">
+              <label for="designation">Current Designation <span class="req">*</span></label>
+              <input type="text" id="designation" name="designation" required placeholder="e.g. Senior Software Engineer" />
+            </div>
+            <div class="field">
+              <label for="position">Functional Area / Expertise <span class="req">*</span></label>
+              <select id="position" name="position" required>
+                <option value="">Select Domain</option>
+                <option value="Science">Science</option>
+                <option value="Technology">Technology</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="IT">Information Technology</option>
+                <option value="Non-IT">Non-IT Sector</option>
+                <option value="Others">Others</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Row 4 -->
+          <div class="form-grid" style="margin-top:24px">
+            <div class="field">
+              <label for="education">Highest Qualification <span class="req">*</span></label>
+              <input type="text" id="education" name="education" required placeholder="e.g. B.Tech / MBA" />
+            </div>
+            <div class="field">
+              <label for="experience">Total Experience (Years) <span class="req">*</span></label>
+              <input type="number" id="experience" name="experience" step="0.5" min="0" required placeholder="e.g. 5" />
+            </div>
+          </div>
+
+          <!-- Row 5 -->
+          <div class="form-grid" style="margin-top:24px">
+            <div class="field">
+              <label for="currentCTC">Current CTC (Per Annum)</label>
+              <input type="text" id="currentCTC" name="currentCTC" placeholder="e.g. 12 LPA" />
+            </div>
+            <div class="field">
+              <label for="expectedCTC">Expected CTC</label>
+              <input type="text" id="expectedCTC" name="expectedCTC" placeholder="e.g. 15 LPA" />
+            </div>
+          </div>
+
+          <!-- Row 6 -->
+          <div class="form-grid single" style="margin-top:24px">
+            <div class="field">
+              <label for="noticePeriod">Notice Period <span class="req">*</span></label>
+              <select id="noticePeriod" name="noticePeriod" required>
+                <option value="">Select Notice Period</option>
+                <option value="Immediate">Immediate Joiner</option>
+                <option value="15 Days">15 Days</option>
+                <option value="30 Days">30 Days</option>
+                <option value="60 Days">60 Days</option>
+                <option value="90 Days">90 Days</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- LinkedIn URL -->
+          <div class="form-grid single" style="margin-top:24px">
+            <div class="field">
+              <label for="linkedinUrl">LinkedIn Profile URL</label>
+              <div style="position:relative">
+                <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#0077b5;">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.27c-.97 0-1.75-.79-1.75-1.76s.78-1.76 1.75-1.76 1.75.79 1.75 1.76-.78 1.76-1.75 1.76zm13.5 11.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59v5.61z"/></svg>
+                </span>
+                <input type="url" id="linkedinUrl" name="linkedinUrl" placeholder="https://www.linkedin.com/in/your-profile-name" style="padding-left:42px;" />
+              </div>
+              <div class="linkedin-hint">
+                <p class="hint-title">Please provide your LinkedIn profile URL</p>
+                <p class="hint-sub">If you're not sure where to find it, follow the instructions below:</p>
+                <ol>
+                  <li>Go to your LinkedIn profile by clicking on your name or profile picture on the LinkedIn homepage.</li>
+                  <li>Your LinkedIn URL will appear in the address bar of your browser. It should look like this: <a href="https://www.linkedin.com/in/your-profile-name" target="_blank" rel="noopener">https://www.linkedin.com/in/your-profile-name</a>.</li>
+                  <li>Copy that URL and paste it in the field above.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <hr class="section-sep" />
+          <div class="form-card-title" style="border-bottom:none;margin-bottom:24px;padding-bottom:0">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Documents & Message
+          </div>
+
+          <!-- Upload -->
+          <div class="field" style="margin-bottom:24px">
+            <label for="resume-upload">Upload Resume (PDF / DOC) <span class="req">*</span></label>
+            <div class="upload-area" id="uploadArea">
+              <input type="file" id="resume-upload" name="resume-upload" accept=".pdf,.doc,.docx" required />
+              <div class="upload-icon">
+                <svg width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg>
+              </div>
+              <p><strong>Click to upload</strong> or drag &amp; drop your file here</p>
+              <p>PDF, DOC, DOCX — up to 10 MB</p>
+              <div id="fileName"></div>
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="field">
+            <label for="message">Message / Cover Letter</label>
+            <textarea id="message" name="message" placeholder="Briefly introduce yourself or add any additional information..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Submit Application →</button>
+          <p id="formStatus"></p>
+        </form>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="image-removebg-preview (23).png" alt="SMC Logo" />
+            <img src="image-removebg-preview (25).png" alt="SOURCINGIA" />
+          </div>
+          <p>Sourcingia Management Consulting Pvt. Ltd. — your trusted recruitment partner for IT and non-IT talent solutions across India.</p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="expertise.html">Our Expertise</a></li>
+            <li><a href="submit-cv.html">Submit CV</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <ul>
+            <li>Real Estate &amp; Construction</li>
+            <li>Manufacturing</li>
+            <li>Research &amp; Development</li>
+            <li>IT Industry</li>
+            <li>Retail Industry</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="tel:7996200355">+91 7996200355</a></li>
+            <li><a href="mailto:Sourcingiamanagementconsulting@gmail.com" style="word-break:break-all">Sourcingiamanagementconsulting@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; <span id="year"></span> Sourcingia Management Consulting Pvt. Ltd. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true });
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Mobile menu
+      document.getElementById('menuToggle').addEventListener('click', () => {
+        document.getElementById('mobileMenu').classList.toggle('open');
+      });
+
+      // File name display
+      document.getElementById('resume-upload').addEventListener('change', function () {
+        const fn = document.getElementById('fileName');
+        fn.textContent = this.files.length ? '✔ ' + this.files[0].name : '';
+      });
+
+      // Form submit → Upload PDF → WhatsApp
+      document.getElementById('cvForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const status = document.getElementById('formStatus');
+        const btn    = document.querySelector('.btn-submit');
+        const data   = new FormData(this);
+
+        // Collect all fields
+        const name    = data.get('fullName')         || '';
+        const email   = data.get('email')            || '';
+        const pos     = data.get('position')         || '';
+        const exp     = data.get('experience')       || '';
+        const phone   = data.get('phone')            || '';
+        const loc     = data.get('currentLocation')  || '';
+        const desg    = data.get('designation')      || '';
+        const edu     = data.get('education')        || '';
+        const notice  = data.get('noticePeriod')     || '';
+        const curCTC  = data.get('currentCTC')       || 'N/A';
+        const expCTC  = data.get('expectedCTC')      || 'N/A';
+        const linkedin= data.get('linkedinUrl')      || 'Not provided';
+        const resumeFile = document.getElementById('resume-upload').files[0];
+
+        // Disable button & show uploading state
+        btn.disabled = true;
+        btn.textContent = '⏳ Uploading Resume…';
+        status.style.color = '#2563eb';
+        status.textContent = 'Uploading your resume, please wait…';
+
+        let resumeUrl = 'Not uploaded';
+
+        // Upload PDF to file.io and get public URL
+        if (resumeFile) {
+          try {
+            const uploadData = new FormData();
+            uploadData.append('file', resumeFile);
+            const res  = await fetch('https://file.io/?expires=7d', {
+              method: 'POST',
+              body: uploadData
+            });
+            const json = await res.json();
+            if (json.success && json.link) {
+              resumeUrl = json.link;
+            }
+          } catch (err) {
+            resumeUrl = 'Upload failed - will send separately';
+          }
+        }
+
+        btn.textContent = '📤 Opening WhatsApp…';
+
+        const msg =
+          `🔔 New CV Submission - Sourcingia%0A%0A` +
+          `👤 Name: ${encodeURIComponent(name)}%0A` +
+          `📧 Email: ${encodeURIComponent(email)}%0A` +
+          `📱 Phone: ${encodeURIComponent(phone)}%0A` +
+          `📍 Location: ${encodeURIComponent(loc)}%0A%0A` +
+          `💼 Designation: ${encodeURIComponent(desg)}%0A` +
+          `🎓 Qualification: ${encodeURIComponent(edu)}%0A` +
+          `🔧 Expertise: ${encodeURIComponent(pos)}%0A` +
+          `📅 Experience: ${encodeURIComponent(exp)} years%0A` +
+          `💰 Current CTC: ${encodeURIComponent(curCTC)}%0A` +
+          `💰 Expected CTC: ${encodeURIComponent(expCTC)}%0A` +
+          `⏳ Notice Period: ${encodeURIComponent(notice)}%0A` +
+          `🔗 LinkedIn: ${encodeURIComponent(linkedin)}%0A` +
+          `📄 Resume: ${encodeURIComponent(resumeUrl)}%0A%0A` +
+          `Applied via Sourcingia website.`;
+
+        setTimeout(() => {
+          window.open(`https://wa.me/917996200355?text=${msg}`, '_blank');
+          this.reset();
+          document.getElementById('fileName').textContent = '';
+          btn.disabled = false;
+          btn.textContent = 'Submit Application →';
+          status.style.color = '#16a34a';
+          status.textContent = '✔ Application sent! We will get back to you soon.';
+        }, 600);
+      });
+    </script>
+  </body>
+</html>

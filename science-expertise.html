@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scientific Hiring Experts | SOURCINGIA - wearmingle.in</title>
+    <meta name="description" content="Specialized recruitment solutions for the scientific sector on wearmingle.in. Connecting innovation-driven firms with top-tier scientific talent." />
+    <meta name="keywords" content="scientific hiring, science recruitment, biotech jobs, research staffing, wearmingle.in" />
+    <link rel="canonical" href="https://wearmingle.in/science-expertise.html" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brandSky: "#D4AF37",
+              brandLight: "#fffbeb",
+              brandCta: "#800000",
+              brandDark: "#4a0000",
+              cardScience: "#f0fdf4"
+            },
+            fontFamily: {
+              heading: ["Poppins", "sans-serif"],
+              body: ["Open Sans", "sans-serif"]
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      .role-list li {
+        position: relative;
+        padding-left: 1.5rem;
+      }
+      .role-list li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #D4AF37;
+        font-weight: bold;
+      }
+      #splash-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background-color: #800000;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.5s ease-out, visibility 0.5s;
+      }
+      .splash-circle-container {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .splash-circle-bg {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 4px solid rgba(212, 175, 55, 0.2);
+      }
+      .splash-circle-fill {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        border: 4px solid #D4AF37;
+        clip-path: inset(100% 0 0 0);
+        animation: fillUp 3s linear forwards;
+      }
+      @keyframes fillUp {
+        from { clip-path: inset(100% 0 0 0); }
+        to { clip-path: inset(0 0 0 0); }
+      }
+      .splash-logo {
+        width: 80px;
+        height: auto;
+        z-index: 10;
+        animation: pulse 2s infinite ease-in-out;
+      }
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); opacity: 1; }
+        50% { transform: scale(1.05); opacity: 0.8; }
+      }
+      .splash-text {
+        margin-top: 20px;
+        color: #D4AF37;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        font-size: 1rem;
+      }
+      html {
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
+    </style>
+  </head>
+  <body class="bg-white font-body text-slate-700 overflow-x-hidden">
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+      <div class="splash-circle-container">
+        <div class="splash-circle-bg"></div>
+        <div class="splash-circle-fill"></div>
+        <img src="image-removebg-preview (23).png" alt="Sourcingia Logo" class="splash-logo">
+      </div>
+      <div class="splash-text">SOURCINGIA</div>
+    </div>
+
+    <!-- Navbar -->
+    <header id="navbar" class="fixed inset-x-0 top-0 z-50 bg-[#800000] transition-all duration-300 w-full overflow-hidden">
+      <nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        <a href="index.html" class="flex items-center gap-2 sm:gap-4 shrink-0">
+          <img src="image-removebg-preview (23).png" alt="SMC Logo" class="h-10 w-auto sm:h-20" />
+          <img src="image-removebg-preview (25).png" alt="SOURCINGIA" class="h-14 w-auto sm:h-24" />
+        </a>
+        <button id="menuToggle" class="md:hidden ml-auto inline-flex shrink-0 rounded-md border border-amber-500 p-2 text-white" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+        <ul id="menu" class="hidden gap-8 text-sm font-semibold text-white md:flex">
+          <li><a class="hover:text-purple-100" href="index.html">Home</a></li>
+          <li><a class="hover:text-purple-100" href="about.html">About</a></li>
+          <li><a class="hover:text-purple-100" href="expertise.html">Expertise</a></li>
+          <li><a class="hover:text-purple-100" href="submit-cv.html">Submit CV</a></li>
+          <li><a class="hover:text-purple-100" href="services.html">Services</a></li>
+          <li><a class="hover:text-purple-100" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div id="mobileMenu" class="mx-4 hidden rounded-xl bg-white p-4 shadow-lg">
+        <a class="block py-2 font-semibold text-brandDark" href="index.html">Home</a>
+        <a class="block py-2 font-semibold text-brandDark" href="about.html">About</a>
+        <a class="block py-2 font-semibold text-brandDark" href="expertise.html">Expertise</a>
+        <a class="block py-2 font-semibold text-brandDark" href="submit-cv.html">Submit CV</a>
+        <a class="block py-2 font-semibold text-brandDark" href="services.html">Services</a>
+        <a class="block py-2 font-semibold text-brandDark" href="contact.html">Contact</a>
+      </div>
+    </header>
+
+    <main class="pt-32">
+      <!-- Hero Detail Section -->
+      <section class="bg-cardScience py-16 lg:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex flex-col items-center gap-12 lg:flex-row">
+            <div class="flex-1" data-aos="fade-right">
+              <nav class="mb-6 flex items-center gap-2 text-sm font-semibold text-green-700">
+                <a href="expertise.html" class="hover:underline">Expertise</a>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                <span>Scientific Hiring</span>
+              </nav>
+              <h1 class="font-heading text-4xl font-extrabold text-brandDark sm:text-5xl lg:text-6xl">
+                Science - <span class="text-green-700">Fueling Discovery And Research</span>
+              </h1>
+              <div class="mt-8 space-y-4 text-lg leading-relaxed text-slate-700">
+                <p>
+                  As a cornerstone of innovation, the scientific sector addresses global challenges such as healthcare breakthroughs, climate change, and sustainable energy solutions. Hiring for such specialized roles demands precision and insight. In a rapidly evolving landscape, the ability to identify and attract top-tier scientific talent is what separates industry leaders from the rest.
+                </p>
+                <p>
+                  Sourcingia Management Consulting excels in this arena, connecting organizations with elite talent that not only fulfills immediate technical needs but also aligns with long-term strategic and research goals. Our specialized approach ensures that every candidate we place possesses the unique blend of academic rigor and practical expertise required to drive meaningful discovery.
+                </p>
+                <p>
+                  Whether it's groundbreaking pharmaceutical research, environmental conservation efforts, or the development of next-generation biotechnologies, we understand the nuances of the scientific field. We serve as a strategic bridge between innovation-driven firms and the visionary scientists who make that innovation possible.
+                </p>
+              </div>
+            </div>
+            <div class="flex-1" data-aos="fade-left">
+              <img src="expertise-science.png" alt="Scientific Research" class="h-auto w-full max-w-lg object-contain" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Roles Section -->
+      <section class="py-20 bg-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="font-heading text-3xl font-bold text-brandDark sm:text-4xl">Some of the key roles in science are:</h2>
+            <div class="mx-auto mt-4 h-1.5 w-24 rounded-full bg-brandSky"></div>
+          </div>
+          
+          <div class="grid gap-x-12 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
+            <ul class="role-list space-y-3 font-semibold text-slate-700">
+              <li>Bioinformatics Analysts</li>
+              <li>CRISPR Technicians</li>
+              <li>Synthetic Biologists</li>
+              <li>Immunotherapy Scientists</li>
+              <li>Bioprocess Engineers</li>
+              <li>Pharmacologists</li>
+              <li>Clinical Research Coordinators and Scientists</li>
+              <li>Food and Agricultural Scientists</li>
+              <li>Precision Medicine Specialists</li>
+              <li>Telemedicine Experts</li>
+              <li>Robotic Surgery Technicians</li>
+            </ul>
+            <ul class="role-list space-y-3 font-semibold text-slate-700">
+              <li>Genetic Counsellors & Genomics Experts</li>
+              <li>Chronic Disease Coordinators</li>
+              <li>Aging Care Coordinators</li>
+              <li>Medical Coders</li>
+              <li>Radiologists</li>
+              <li>Biomedical Engineers</li>
+              <li>Epidemiologists</li>
+              <li>Environmental Scientists</li>
+              <li>Nanotechnologists</li>
+              <li>Clinical Data Managers</li>
+              <li>Surgeons</li>
+            </ul>
+            <ul class="role-list space-y-3 font-semibold text-slate-700">
+              <li>Astrobiologists</li>
+              <li>Bioethicists</li>
+              <li>Veterinary Scientists</li>
+              <li>Doctors</li>
+              <li>Physiotherapists</li>
+              <li>Molecular Biologists</li>
+              <li>Biostatisticians</li>
+              <li>Public Health Experts</li>
+              <li>Regenerative Medicine Researchers</li>
+              <li>Toxicologists</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact CTA -->
+      <section class="py-20 bg-slate-50">
+        <div class="mx-auto max-w-4xl px-4 text-center sm:px-6">
+          <h2 class="font-heading text-3xl font-bold text-brandDark">Find Your Next Scientific Star Hire</h2>
+          <p class="mt-4 text-slate-600">We bridge the gap between innovation and the demand for top Science talent. Ready to elevate your research team?</p>
+          <div class="mt-10">
+            <a href="contact.html" class="rounded-full bg-brandCta px-10 py-4 font-bold text-white shadow-lg hover:bg-brandDark transition">Get Started Now</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#800000] py-14 text-white">
+      <div class="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+        <div>
+          <a href="index.html" class="flex items-center gap-4 mb-6">
+            <img src="image-removebg-preview (23).png" alt="SMC Logo" class="h-14 w-auto sm:h-20" />
+            <img src="image-removebg-preview (25).png" alt="SOURCINGIA" class="h-14 w-auto sm:h-24" />
+          </a>
+          <p class="mt-4 text-sm leading-relaxed">Sourcingia Management Consulting Pvt. Ltd. is your trusted recruitment partner for IT and non-IT talent solutions.</p>
+        </div>
+        <div class="lg:pl-12">
+          <h4 class="font-semibold text-brandSky">Quick Links</h4>
+          <ul class="mt-4 space-y-3 text-sm">
+            <li><a class="hover:text-white" href="index.html">Home</a></li>
+            <li><a class="hover:text-white" href="about.html">About Us</a></li>
+            <li><a class="hover:text-white" href="expertise.html">Our Expertise</a></li>
+            <li><a class="hover:text-white" href="submit-cv.html">Submit CV</a></li>
+            <li><a class="hover:text-white" href="services.html">Our Services</a></li>
+            <li><a class="hover:text-white" href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div><h4 class="font-semibold text-brandSky">Services</h4><ul class="mt-4 space-y-3 text-sm"><li>Real Estate & Construction</li><li>Manufacturing</li><li>Research & Development</li><li>IT Industry</li><li>Retail Industry</li></ul></div>
+        <div><h4 class="font-semibold text-brandSky">Contact Us</h4><ul class="mt-4 space-y-3 text-sm"><li><a class="hover:text-white" href="tel:7996200355">+91 7996200355</a></li><li><a class="hover:text-white break-all" href="mailto:Sourcingiamanagementconsulting@gmail.com">Sourcingiamanagementconsulting@gmail.com</a></li></ul></div>
+      </div>
+      <div class="mx-auto mt-10 max-w-7xl border-t border-amber-300/40 px-4 pt-6 sm:px-6 lg:px-8 text-center text-xs">
+        © <span id="year"></span> Sourcingia Management Consulting Pvt. Ltd. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({ duration: 800, easing: "ease-out-cubic", once: true });
+      document.getElementById('year').textContent = new Date().getFullYear();
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+      // Hide Splash Screen
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          document.getElementById('splash-screen').style.opacity = '0';
+          document.getElementById('splash-screen').style.visibility = 'hidden';
+        }, 1500);
+      });
+    </script>
+  </body>
+</html>
