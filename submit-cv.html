@@ -606,21 +606,37 @@
 
         let resumeUrl = 'Not uploaded';
 
-        // Upload PDF to file.io and get public URL
+        // Validate file size (10MB limit)
+        if (resumeFile && resumeFile.size > 10 * 1024 * 1024) {
+          status.style.color = '#dc2626';
+          status.textContent = '❌ File too large (Max 10MB). Please compress your PDF.';
+          btn.disabled = false;
+          btn.textContent = 'Submit Application →';
+          return;
+        }
+
+        // Upload PDF to Cloudinary and get public URL
         if (resumeFile) {
           try {
             const uploadData = new FormData();
             uploadData.append('file', resumeFile);
-            const res  = await fetch('https://file.io/?expires=7d', {
+            uploadData.append('upload_preset', 'SOURCINGIA'); // Your Unsigned Preset
+
+            const res = await fetch('https://api.cloudinary.com/v1_1/dd6trvice/raw/upload', {
               method: 'POST',
               body: uploadData
             });
+            
             const json = await res.json();
-            if (json.success && json.link) {
-              resumeUrl = json.link;
+            if (json.secure_url) {
+              resumeUrl = json.secure_url;
+            } else {
+              console.error('Cloudinary error details:', json);
+              resumeUrl = `Upload failed: ${json.error ? json.error.message : 'Unknown error'}`;
             }
           } catch (err) {
-            resumeUrl = 'Upload failed - will send separately';
+            console.error('Upload catch:', err);
+            resumeUrl = 'Upload failed - connection issue';
           }
         }
 
