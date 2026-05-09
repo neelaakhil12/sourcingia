@@ -141,9 +141,10 @@ if (form) {
     const name = String(data.get("name") || "").trim();
     const phone = String(data.get("phone") || "").trim();
     const email = String(data.get("email") || "").trim();
+    const company = String(data.get("company") || "").trim();
     const message = String(data.get("message") || "").trim();
 
-    const content = `New hiring inquiry from website:%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email)}%0AMessage: ${encodeURIComponent(message)}`;
+    const content = `New hiring inquiry from website:%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AEmail: ${encodeURIComponent(email)}%0ACompany: ${encodeURIComponent(company)}%0AMessage: ${encodeURIComponent(message)}`;
     const whatsapp = `https://wa.me/917996200355?text=${content}`;
 
     const status = document.getElementById("formStatus");
