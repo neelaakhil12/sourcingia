@@ -136,17 +136,19 @@
         #menuToggle {
           display: inline-flex !important;
           z-index: 60;
+          flex-shrink: 0;
         }
         #menu {
           display: none !important;
         }
         .fab-stack {
-          right: 10px !important;
-          bottom: 8px !important;
+          right: 12px !important;
+          bottom: 12px !important;
+          max-width: calc(100vw - 24px);
         }
         .fab-action-btn {
-          width: 52px;
-          height: 52px;
+          width: 48px;
+          height: 48px;
         }
       }
       @media (max-width: 420px) {
@@ -175,13 +177,16 @@
           display: flex !important;
         }
       }
-      html {
+      html, body {
         max-width: 100vw;
         overflow-x: hidden;
       }
+      body {
+        position: relative;
+      }
     </style>
   </head>
-  <body class="bg-white font-body text-slate-700">
+  <body class="bg-white font-body text-slate-700 overflow-x-hidden">
     <div id="splash-screen">
       <div class="splash-circle-container">
         <div class="splash-circle-bg"></div>
@@ -190,13 +195,13 @@
       </div>
       <div class="splash-text">SOURCINGIA</div>
     </div>
-    <header id="navbar" class="fixed inset-x-0 top-0 z-50 bg-[#800000] transition-all duration-300 w-full overflow-hidden">
-      <nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <a href="index.html" class="flex items-center gap-2 sm:gap-4 shrink-0">
-          <img src="image-removebg-preview (23).png" alt="SMC Logo" class="h-10 w-auto sm:h-20" />
-          <img src="image-removebg-preview (25).png" alt="SOURCINGIA" class="h-14 w-auto sm:h-24" />
+    <header id="navbar" class="fixed inset-x-0 top-0 z-50 bg-[#800000] transition-all duration-300 w-full" style="overflow:visible">
+      <nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-3 py-3 sm:px-6 sm:py-4 lg:px-8">
+        <a href="index.html" class="flex items-center gap-1 sm:gap-4 shrink-0 min-w-0">
+          <img src="image-removebg-preview (23).png" alt="SMC Logo" class="h-8 w-auto sm:h-16 flex-shrink-0" />
+          <img src="image-removebg-preview (25).png" alt="SOURCINGIA" class="h-8 w-auto sm:h-20 flex-shrink-0" />
         </a>
-        <button id="menuToggle" class="md:hidden ml-auto inline-flex shrink-0 rounded-md border border-amber-500 p-2 text-white" aria-label="Open menu"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg></button>
+        <button id="menuToggle" class="md:hidden ml-2 inline-flex flex-shrink-0 rounded-md border border-amber-500 p-2 text-white" aria-label="Open menu"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg></button>
         <ul id="menu" class="hidden gap-8 text-sm font-semibold text-white">
           <li><a class="hover:text-purple-100" href="index.html">Home</a></li>
           <li><a class="hover:text-purple-100" href="about.html">About</a></li>
